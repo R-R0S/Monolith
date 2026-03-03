@@ -16,7 +16,7 @@
     startAudio:
       path: /Audio/Misc/notice1.ogg
     weight: 2
-    maxOccurrences: 6 # You may think this is absurd, but it can only spawn 4 events max in normal schedulers anyways.
+    maxOccurrences: 4 # You may think this is absurd, but it can only spawn 4 events max in normal schedulers anyways.
   - type: GameRule
     minPlayers: 40
   - type: LoadMapRule
@@ -36,7 +36,7 @@
     startAudio:
       path: /Audio/Misc/notice1.ogg
     weight: 2
-    maxOccurrences: 3 # You may think this is absurd, but it can only spawn 4 events max in normal schedulers anyways.
+    maxOccurrences: 2 # You may think this is absurd, but it can only spawn 4 events max in normal schedulers anyways.
   - type: GameRule
     minPlayers: 40
   - type: LoadMapRule
@@ -56,7 +56,7 @@
     startAudio:
       path: /Audio/Misc/notice1.ogg
     weight: 2
-    maxOccurrences: 6 # You may think this is absurd, but it can only spawn 4 events max in normal schedulers anyways.
+    maxOccurrences: 4 # You may think this is absurd, but it can only spawn 4 events max in normal schedulers anyways.
   - type: GameRule
     minPlayers: 40
   - type: LoadMapRule
@@ -76,7 +76,7 @@
     startAudio:
       path: /Audio/Misc/notice1.ogg
     weight: 2
-    maxOccurrences: 6 # You may think this is absurd, but it can only spawn 4 events max in normal schedulers anyways.
+    maxOccurrences: 4 # You may think this is absurd, but it can only spawn 4 events max in normal schedulers anyways.
   - type: GameRule
     minPlayers: 40
   - type: LoadMapRule

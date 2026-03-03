@@ -17680,3 +17680,12 @@ Entries:
   id: 1949
   time: '2026-03-02T23:53:09.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3215
+- author: Corrupt142
+  changes:
+    - type: Tweak
+      message: Buffed the loot on the ADS Wyvern
+    - type: Fix
+      message: Removed all debuggium from the wyvern
+  id: 1950
+  time: '2026-03-03T04:08:28.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3316

@@ -4,8 +4,8 @@
   id: NewKinPidgin
   isVisibleLanguage: true
   speech:
-    color: "#a489a0"
-    fontId: ChelseaMarket
+    color: "#e919ee" # Exodus
+    fontId: Blackcraft # Exodus
     fontSize: 12
   obfuscation:
     !type:SyllableObfuscation

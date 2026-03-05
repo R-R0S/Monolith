@@ -86,9 +86,9 @@
     - SolCommon
     - RootSpeak
     - Moffic
-    - ValyrianStandard
+    - ElDwarf # Exodus
     - Chittin
-    - SiikMaas
+    # - SiikMaas # Exodus
     - RobotTalk
     - DroneTalk
     - Marish
@@ -104,9 +104,9 @@
     - SolCommon
     - RootSpeak
     - Moffic
-    - ValyrianStandard
+    - ElDwarf # Exodus
     - Chittin
-    - SiikMaas
+    # - SiikMaas # Exodus
     - RobotTalk
     - DroneTalk
     - Marish

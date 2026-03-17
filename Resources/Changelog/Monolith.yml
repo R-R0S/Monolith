@@ -18292,3 +18292,10 @@ Entries:
   id: 2018
   time: '2026-03-16T13:45:26.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3455
+- author: Ghost581X
+  changes:
+    - type: Tweak
+      message: Viper Group has been re-enabled.
+  id: 2019
+  time: '2026-03-17T23:46:06.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3074

@@ -18432,3 +18432,10 @@ Entries:
   id: 2033
   time: '2026-03-20T18:42:51.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3498
+- author: chuga-git
+  changes:
+    - type: Fix
+      message: M381 Charon range now at its intended value of 2.5 km (from 1.4km).
+  id: 2034
+  time: '2026-03-21T00:29:05.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3476

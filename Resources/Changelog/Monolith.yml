@@ -18517,3 +18517,10 @@ Entries:
   id: 2042
   time: '2026-03-21T16:48:32.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3505
+- author: Redrover1760
+  changes:
+    - type: Tweak
+      message: World loading range increased
+  id: 2043
+  time: '2026-03-21T18:34:40.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3506

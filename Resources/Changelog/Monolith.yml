@@ -18540,3 +18540,13 @@ Entries:
   id: 2045
   time: '2026-03-21T19:55:13.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3449
+- author: Ghost581X
+  changes:
+    - type: Tweak
+      message: >-
+        The Viper Group hardsuit surplus stocks have been replaced by a
+        standardized Phaethon design tailor-made for Rahkshans who prefer
+        tending to their squadmates.
+  id: 2046
+  time: '2026-03-21T20:00:13.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3482

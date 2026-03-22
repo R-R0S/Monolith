@@ -18659,3 +18659,10 @@ Entries:
   id: 2059
   time: '2026-03-22T19:39:33.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3415
+- author: Mrrpip
+  changes:
+    - type: Tweak
+      message: Mercenaries have gained USSP button and locker access.
+  id: 2060
+  time: '2026-03-22T19:40:11.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3371

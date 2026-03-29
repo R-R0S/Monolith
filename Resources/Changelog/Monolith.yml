@@ -19153,3 +19153,10 @@ Entries:
   id: 2109
   time: '2026-03-29T17:15:36.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3624
+- author: mikusssssss
+  changes:
+    - type: Add
+      message: The ownership of all ATM's has been transferred to the Bank Of America
+  id: 2110
+  time: '2026-03-29T17:56:06.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3625

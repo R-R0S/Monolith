@@ -19160,3 +19160,10 @@ Entries:
   id: 2110
   time: '2026-03-29T17:56:06.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3625
+- author: mikusssssss
+  changes:
+    - type: Fix
+      message: Names of radio channels
+  id: 2111
+  time: '2026-03-29T18:08:28.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3623

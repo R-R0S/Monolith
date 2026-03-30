@@ -19293,3 +19293,14 @@ Entries:
   id: 2121
   time: '2026-03-30T17:33:10.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3645
+- author: Ilya246
+  changes:
+    - type: Tweak
+      message: >-
+        Slightly increased middle ring asteroid spawnrate to encourage
+        prospecting.
+    - type: Add
+      message: The Wall
+  id: 2122
+  time: '2026-03-30T18:15:50.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3648

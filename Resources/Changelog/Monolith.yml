@@ -19255,3 +19255,12 @@ Entries:
   id: 2123
   time: '2026-04-03T17:46:11.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3636
+- author: EldritchPineapple
+  changes:
+    - type: Tweak
+      message: >-
+        recipes in the med assembler have been changed to make regenerative
+        meshes and medicated sutures easier to craft
+  id: 2124
+  time: '2026-04-03T18:25:56.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3680

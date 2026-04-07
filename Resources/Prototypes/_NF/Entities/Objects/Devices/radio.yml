@@ -28,7 +28,7 @@
   - type: Tag  # Mono
     tags:
     - HandicommsBounty
-    - Radio
+    - Radio # Exodus
   # Nuclear-14-Start
   - type: ActivatableUI
     key: enum.HandheldRadioUiKey.Key

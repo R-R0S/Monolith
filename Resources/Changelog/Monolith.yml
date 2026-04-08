@@ -19518,3 +19518,10 @@ Entries:
   id: 2152
   time: '2026-04-07T18:35:47.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3723
+- author: Ilya246
+  changes:
+    - type: Tweak
+      message: Far reaches drone targeting range doubled.
+  id: 2153
+  time: '2026-04-08T23:36:44.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3728

@@ -19622,3 +19622,12 @@ Entries:
   id: 2165
   time: '2026-04-10T18:58:20.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3746
+- author: Ilya246
+  changes:
+    - type: Fix
+      message: >-
+        Gunnery console rotation is no longer always north. Also fixed mech and
+        other mass scanners.
+  id: 2166
+  time: '2026-04-11T06:05:04.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3748

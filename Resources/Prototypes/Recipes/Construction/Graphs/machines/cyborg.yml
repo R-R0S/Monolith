@@ -16,14 +16,14 @@
         store: part-container
 
       - component: Flash
-        name: flash
+        name: construction-graph-component-flash
         store: part-container
         icon:
           sprite: Objects/Weapons/Melee/flash.rsi
           state: flash
 
       - component: Flash
-        name: second flash
+        name: construction-graph-component-second-flash
         store: part-container
         icon:
           sprite: Objects/Weapons/Melee/flash.rsi
@@ -63,7 +63,7 @@
           - !type:EntityAnchored {}
         steps:
          - tag: AICoreElectronics
-           name: ai core electronics board
+           name: construction-graph-tag-station-ai-core-electronics
            icon:
              sprite: Objects/Misc/module.rsi
              state: blank_mod
@@ -94,7 +94,7 @@
         - !type:EntityAnchored {}
        steps:
        - tag: Posibrain
-         name: postrionic brain
+         name: construction-graph-tag-posibrain
          icon:
            sprite: Objects/Specific/Robotics/mmi.rsi
            state: posibrain

@@ -101,15 +101,10 @@
 
 - type: construction
   id: Sand
-  name: sand pile
-  description: Somehow works as a growing spot.
   graph: SandGraph
   startNode: start
   targetNode: SandNode
   category: construction-category-furniture
-  icon:
-    sprite: Structures/Hydroponics/misc.rsi
-    state: sand
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -129,7 +124,7 @@
       - !type:SnapToGrid { }
       steps:
       - tag: SandMaterial
-        name: desert sand
+        name: construction-graph-tag-sand-material
         icon:
           sprite: _Mono/Objects/Misc/desert_sand.rsi
           state: icon

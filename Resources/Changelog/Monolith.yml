@@ -19732,3 +19732,10 @@ Entries:
   id: 2178
   time: '2026-04-13T15:00:42.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3751
+- author: Redrover1760
+  changes:
+    - type: Add
+      message: Adds black cloth wraps.
+  id: 2179
+  time: '2026-04-13T15:25:26.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3741

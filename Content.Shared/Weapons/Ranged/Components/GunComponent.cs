@@ -334,13 +334,15 @@ public sealed partial class GunComponent : Component
     /// </summary>
     [DataField]
     public float ExecutionModifier = 9.0f;
-
+    
+    // Exodus-begin
     /// <summary>
     /// Exodus
     /// Use gun position for artillery
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool UseUserPosition = true;
+    // Exodus-end
 }
 
 [Flags]

@@ -241,7 +241,8 @@ public sealed partial class GunComponent : Component
     /// <summary>
     /// What firemodes can be selected.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField]
+    [AutoNetworkedField]
     public SelectiveFire AvailableModes = SelectiveFire.SemiAuto;
 
 

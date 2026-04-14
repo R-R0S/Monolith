@@ -572,7 +572,6 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
-
     fireRate: 20
     recoil: 0
     minAngle: 0
@@ -642,7 +641,6 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
-
     fireRate: .15
     recoil: 5
     minAngle: 0
@@ -715,7 +713,6 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
-
     fireRate: 20
     recoil: 0
     minAngle: 0
@@ -808,7 +805,6 @@
         layer:
         - MachineLayer
   - type: Gun
-
     projectileSpeed: 170
     fireRate: 13
     recoil: 0
@@ -896,7 +892,6 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
-
     fireRate: 0.066 # 15s
     recoil: 0
     minAngle: 0
@@ -986,7 +981,6 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
-
     fireRate: 0.04 # 25s
     recoil: 50 # 2x
     minAngle: 0
@@ -1076,7 +1070,6 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
-
     fireRate: 0.4
     minAngle: 0
     maxAngle: 4
@@ -1154,7 +1147,6 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
-
     fireRate: 1.2
     recoil: 0
     minAngle: 0
@@ -1233,7 +1225,6 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
-
     recoil: 10 # 2/5x
     projectileSpeed: 150
     minAngle: 0
@@ -1320,7 +1311,6 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
-
     fireRate: 25
     recoil: 2 # 2/25x
     minAngle: 0

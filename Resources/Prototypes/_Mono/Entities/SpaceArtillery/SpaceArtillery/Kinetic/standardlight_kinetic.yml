@@ -23,6 +23,7 @@
     ports:
     - Toggle
   - type: Gun
+    useUserPosition: false # Exodus artillery fix
     fireRate: 12
     recoil: 5 # 1/5x
     projectileSpeed: 160
@@ -107,6 +108,7 @@
     ports:
     - Toggle
   - type: Gun
+    useUserPosition: false # Exodus artillery fix
     fireRate: 25
     recoil: 5 # 1/5x
     projectileSpeed: 180

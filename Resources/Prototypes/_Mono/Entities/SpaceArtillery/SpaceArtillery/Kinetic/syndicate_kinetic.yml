@@ -30,6 +30,7 @@
     ports:
     - Toggle
   - type: Gun
+    useUserPosition: false # Exodus artillery fix
     fireRate: 5
     recoil: 10 # 2/5x
     projectileSpeed: 200
@@ -101,6 +102,7 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
+    useUserPosition: false # Exodus artillery fix
     fireRate: 2.5
     recoil: 10 # 2/5x
     projectileSpeed: 240
@@ -190,6 +192,7 @@
         layer:
         - MachineLayer
   - type: Gun
+    useUserPosition: false # Exodus artillery fix
     projectileSpeed: 325
     recoil: 50 # 2x
     minAngle: 0
@@ -280,6 +283,7 @@
         layer:
         - MachineLayer
   - type: Gun
+    useUserPosition: false # Exodus artillery fix
     projectileSpeed: 720
     recoil: 100 # 4x
     minAngle: 0

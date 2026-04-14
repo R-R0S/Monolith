@@ -20,6 +20,7 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
+    useUserPosition: false # Exodus artillery fix
     fireRate: 3
     recoil: 10 # 2/5x
     projectileSpeed: 170
@@ -100,6 +101,7 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
+    useUserPosition: false # Exodus artillery fix
     fireRate: 1.5
     recoil: 10 # 2/5x
     projectileSpeed: 250

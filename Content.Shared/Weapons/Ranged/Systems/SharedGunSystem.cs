@@ -27,6 +27,7 @@ using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Whitelist;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
+using Content.Shared.Body.Organ;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -41,7 +42,8 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Robust.Shared.Spawners; // Mono
-using Content.Shared.Inventory; // Exodus
+using Content.Shared.Inventory;
+using Content.Shared.Nutrition.FoodMetamorphRules; // Exodus
 
 namespace Content.Shared.Weapons.Ranged.Systems;
 
@@ -446,9 +448,9 @@ public abstract partial class SharedGunSystem : EntitySystem
             return;
         }
 
-        var fromCoordinates = Containers.TryGetContainingContainer(gunUid, out _) // Exodus: WTF they're firing from user
-            ? Transform(user).Coordinates
-            : Transform(gunUid).Coordinates;
+            var fromCoordinates = gun.UseUserPosition // Exodus artillery fix
+                ? Transform(user).Coordinates
+                : Transform(gunUid).Coordinates;
 
         // Remove ammo
         var ev = new TakeAmmoEvent(shots, new List<(EntityUid? Entity, IShootable Shootable)>(), fromCoordinates, user, true); // Frontier: add intent to fire

@@ -32,7 +32,6 @@
         layer:
         - MachineLayer
   - type: Gun
-    useUserPosition: false # Exodus artillery fix
     projectileSpeed: 275
     minAngle: 0
     maxAngle: 1
@@ -124,7 +123,6 @@
         layer:
         - MachineLayer
   - type: Gun
-    useUserPosition: false # Exodus artillery fix
     projectileSpeed: 350
     minAngle: 0
     maxAngle: 1
@@ -214,7 +212,6 @@
         layer:
         - MachineLayer
   - type: Gun
-    useUserPosition: false # Exodus artillery fix
     projectileSpeed: 350
     minAngle: 0
     maxAngle: 0
@@ -302,7 +299,6 @@
         layer:
         - MachineLayer
   - type: Gun
-    useUserPosition: false # Exodus artillery fix
     projectileSpeed: 290
     minAngle: 0
     maxAngle: 7

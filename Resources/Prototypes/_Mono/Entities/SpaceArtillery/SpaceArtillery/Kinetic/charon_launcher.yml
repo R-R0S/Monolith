@@ -16,7 +16,6 @@
     range: 500
   - type: GunSignalControl
   - type: Gun
-    useUserPosition: false # Exodus artillery fix
     fireRate: 0.05
     recoil: 2500 # 100x
     minAngle: 0

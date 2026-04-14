@@ -24,7 +24,6 @@
     range: 500
   - type: GunSignalControl #I'm not certain why a station only gun has it in the description.
   - type: Gun
-    useUserPosition: false # Exodus artillery fix
     fireRate: 0.1
     recoil: 2500 # 100x
     minAngle: 0

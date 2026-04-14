@@ -16,7 +16,6 @@
     range: 700
   - type: GunSignalControl
   - type: Gun
-    useUserPosition: false # Exodus artillery fix
     fireRate: 3
     recoil: 1
     projectileSpeed: 75

@@ -20002,3 +20002,16 @@ Entries:
   id: 2208
   time: '2026-04-16T19:44:11.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3808
+- author: lopsidedmanboobs
+  changes:
+    - type: Add
+      message: >-
+        You cannot borg players during piracy unless they attack you, the
+        pirate. Review rule 3 for changes.
+    - type: Tweak
+      message: >-
+        Companies that are known pirates/antagonistic (Redsail Corsairs as an
+        example) can be Killed on Sight. Review rule 1 for changes. 
+  id: 2209
+  time: '2026-04-17T00:41:48.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3809

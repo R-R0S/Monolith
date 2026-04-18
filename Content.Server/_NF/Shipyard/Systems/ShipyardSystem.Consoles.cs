@@ -748,10 +748,13 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             if (HasComp<GhostComponent>(child))
                 continue;
 
+            // Exodus - stop selling people -  begin
             // Check if we have a player entity that's either still around or alive and may come back
-            if (_mind.TryGetMind(child, out var mind, out var mindComp)
-                && (mindComp.Session != null
-                || !_mind.IsCharacterDeadPhysically(mindComp)))
+            // if (_mind.TryGetMind(child, out var mind, out var mindComp)
+            //    && (mindComp.Session != null
+            //    || !_mind.IsCharacterDeadPhysically(mindComp)))
+            if (_mind.TryGetMind(child, out var mind, out var _))
+            // Exodus - stop selling people - end
             {
                 return Name(child);
             }

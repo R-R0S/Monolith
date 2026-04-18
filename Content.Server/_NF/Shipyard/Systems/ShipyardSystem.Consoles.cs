@@ -753,8 +753,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             // if (_mind.TryGetMind(child, out var mind, out var mindComp)
             //    && (mindComp.Session != null
             //    || !_mind.IsCharacterDeadPhysically(mindComp)))
-            if (_mind.TryGetMind(child, out var mind, out var mindComp)
-                && mindComp.Session != null)
+            if (_mind.TryGetMind(child, out var mind, out var _))
             // Exodus - stop selling people - end
             {
                 return Name(child);

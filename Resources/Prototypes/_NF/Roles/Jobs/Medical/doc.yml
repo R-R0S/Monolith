@@ -31,7 +31,7 @@
   displayWeight: 60 # Second from the top # mono - first from top
   canBeAntag: false
   accessGroups:
-  - AllAccessSR #Exodus
+  - AllAccessMono #Mono
   access:
   - ChiefMedicalOfficer #Mono
   special:

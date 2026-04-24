@@ -20396,3 +20396,12 @@ Entries:
   id: 2248
   time: '2026-04-24T18:13:14.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3870
+- author: Redrover1760
+  changes:
+    - type: Tweak
+      message: >-
+        Sultan Pulsar no longer uses a static price, instead based off
+        materials.
+  id: 2249
+  time: '2026-04-24T19:27:01.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3876

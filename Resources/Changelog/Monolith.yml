@@ -20430,3 +20430,13 @@ Entries:
   id: 2252
   time: '2026-04-25T03:02:50.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3879
+- author: kasature90
+  changes:
+    - type: Add
+      message: >-
+        Small (5x5) and normal (7x7) sized nuclear-fission reactors for TSF,
+        PDV, USSP, CC, and Civilians. Currently not mapped anywhere, with
+        corresponding turbines (3x2 and 3x5).
+  id: 2253
+  time: '2026-04-25T09:27:58.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3838

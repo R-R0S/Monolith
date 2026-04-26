@@ -9,8 +9,8 @@
 - type: vessel
   id: Rook
   parent: BaseVessel
-  name: Rook
-  description: Micro-fighter equipped with two dravons and a single 30mm chaingun.
+  name: Грач # Ru-Localization
+  description: Хрупкий, но мощный боевой шаттл. Оснащён два Дваронами и одиночным 30мм пулемётом. # Ru-Localization
   price: 15000
   category: Small
   group: Custom
@@ -25,7 +25,7 @@
 
 - type: gameMap
   id: Rook
-  mapName: 'Rook'
+  mapName: 'Грач' # Ru-Localization
   mapPath: /Maps/_Mono/Shuttles/Carrier/rook.yml
   minPlayers: 0
   stations:
@@ -33,6 +33,6 @@
       stationProto: StandardFrontierVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Rook SEC{1}'
+        mapNameTemplate: 'Грач{1}' # Ru-Localization
         nameGenerator: !type:NanotrasenNameGenerator
           prefixCreator: '14'

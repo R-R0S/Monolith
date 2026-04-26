@@ -9,8 +9,8 @@
 - type: vessel
   id: Hound
   parent: BaseVessel
-  name: Hound
-  description: A security drone equiped with a prometheus cannon. 
+  name: Гончая # Ru-Localization
+  description: Дрон, оснащённый орудием Прометеус. # Ru-Localization
   price: 35000
   category: Small
   group: Custom
@@ -25,7 +25,7 @@
 
 - type: gameMap
   id: Hound
-  mapName: 'Hound'
+  mapName: 'Гончая' # Ru-Localization
   mapPath: /Maps/_Mono/Shuttles/Carrier/hound.yml
   minPlayers: 0
   stations:
@@ -33,6 +33,6 @@
       stationProto: StandardFrontierVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Hound SEC{1}'
+        mapNameTemplate: 'Гончая{1}' # Ru-Localization
         nameGenerator: !type:NanotrasenNameGenerator
           prefixCreator: '14'

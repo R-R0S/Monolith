@@ -9,8 +9,8 @@
 - type: vessel
   id: Taser
   parent: BaseVessel
-  name: Taser
-  description: Micro-fighter equipped with EMP Launcher. Drone server included.
+  name: Тазер # Ru-Localization
+  description: Дрон, оснащённый ЭМИ-пусковой установкой. # Ru-Localization
   price: 12500
   category: Small
   group: Custom
@@ -25,7 +25,7 @@
 
 - type: gameMap
   id: Taser
-  mapName: 'Taser'
+  mapName: 'Тазер' # Ru-Localization
   mapPath: /Maps/_Mono/Shuttles/Carrier/taser.yml
   minPlayers: 0
   stations:
@@ -33,6 +33,6 @@
       stationProto: StandardFrontierVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Taser SEC{1}'
+        mapNameTemplate: 'Тазер{1}' # Ru-Localization
         nameGenerator: !type:NanotrasenNameGenerator
           prefixCreator: '14'

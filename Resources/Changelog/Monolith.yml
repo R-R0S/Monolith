@@ -20495,3 +20495,10 @@ Entries:
   id: 2259
   time: '2026-04-26T16:23:01.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3861
+- author: kasature90
+  changes:
+    - type: Fix
+      message: Fixed reactor explosions being too weak.
+  id: 2260
+  time: '2026-04-26T17:12:17.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3889

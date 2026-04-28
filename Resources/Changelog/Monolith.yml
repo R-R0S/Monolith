@@ -20516,3 +20516,17 @@ Entries:
   id: 2262
   time: '2026-04-27T00:07:51.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3894
+- author: 77seven77seven
+  changes:
+    - type: Add
+      message: >-
+        Organs now have a value (2500), and you can now sell them! Printed
+        organs have a value as well, but a significantly small one. If this is
+        abused, prepare to get this shit fucking nerfed into the ground, chuds.
+    - type: Add
+      message: >-
+        Added new Organ Harvester machine, a repurposed Artifact Crusher,
+        basically a hydraulic press with a circular saw.
+  id: 2263
+  time: '2026-04-28T22:04:09.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3899

@@ -24,13 +24,13 @@ public sealed class VulpkaninAccentSystem : EntitySystem
         var message = args.Message;
 
         // r into rr or rrr
-        message = RegexLowerR.Replace(message, _random.Pick(new List<string>() { "rr", "rrr" }));
+        message = RegexLowerR.Replace(message, _random.Prob(0.5f) ? "rr" : "rrr");
         // R into RR or RRR
-        message = RegexUpperR.Replace(message, _random.Pick(new List<string>() { "RR", "RRR" }));
+        message = RegexUpperR.Replace(message, _random.Prob(0.5f) ? "RR" : "RRR");
         // р в рр или ррр
-        message = RegexRuLowerR.Replace(message, _random.Pick(new List<string>() { "рр", "ррр" }));
+        message = RegexRuLowerR.Replace(message, _random.Prob(0.5f) ? "рр" : "ррр");
         // Р в РР или РРР
-        message = RegexRuUpperR.Replace(message, _random.Pick(new List<string>() { "РР", "РРР" }));
+        message = RegexRuUpperR.Replace(message, _random.Prob(0.5f) ? "РР" : "РРР");
 
         args.Message = message;
     }

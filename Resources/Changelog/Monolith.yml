@@ -20684,3 +20684,14 @@ Entries:
   id: 2280
   time: '2026-05-03T01:21:35.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3886
+- author: lopsidedmanboobs
+  changes:
+    - type: Add
+      message: >-
+        FTL's & Densavars are now in RPR9 and expected to uphold harsher RP
+        standards.
+    - type: Remove
+      message: You can no longer KOS for Command Bounties.
+  id: 2281
+  time: '2026-05-03T09:39:22.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3933

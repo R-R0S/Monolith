@@ -20658,3 +20658,10 @@ Entries:
   id: 2278
   time: '2026-05-02T22:21:31.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3928
+- author: kasature90
+  changes:
+    - type: Tweak
+      message: Brought back walls of different types having iconsmooth.
+  id: 2279
+  time: '2026-05-03T00:05:55.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3926

@@ -20773,3 +20773,10 @@ Entries:
   id: 2287
   time: '2026-05-04T06:53:22.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3437
+- author: Redrover1760
+  changes:
+    - type: Fix
+      message: Shader crash fixes round 2
+  id: 2288
+  time: '2026-05-04T16:38:01.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3943

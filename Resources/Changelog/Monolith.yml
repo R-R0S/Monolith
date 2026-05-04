@@ -20709,3 +20709,10 @@ Entries:
   id: 2283
   time: '2026-05-03T16:38:28.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3932
+- author: Redrover1760
+  changes:
+    - type: Fix
+      message: Fixed some drivers crashing from grain texture.
+  id: 2284
+  time: '2026-05-04T02:52:04.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3938

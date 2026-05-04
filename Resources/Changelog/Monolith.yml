@@ -20716,3 +20716,20 @@ Entries:
   id: 2284
   time: '2026-05-04T02:52:04.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3938
+- author: Onezero0
+  changes:
+    - type: Tweak
+      message: Walls are weaker and some shipguns deal more damage.
+    - type: Tweak
+      message: Fangs use AP ammo now.
+    - type: Tweak
+      message: 'Shipgun ammo sprites have been updated. '
+    - type: Tweak
+      message: >-
+        Standard Charon slugs now penetrate armor rather than explode. Nukes are
+        unchanged.
+    - type: Tweak
+      message: Phalanx has slightly more range.
+  id: 2285
+  time: '2026-05-04T06:49:50.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3769

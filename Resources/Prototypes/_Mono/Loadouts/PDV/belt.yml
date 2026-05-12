@@ -11,7 +11,6 @@
 # Exodus - begin
 - type: loadout
   id: PDVCombatWebbingMedical
-  name: chest rig (medical)
   equipment:
     belt: ClothingBeltMilitaryWebbingMed
 # Exodus - end

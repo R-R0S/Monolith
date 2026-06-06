@@ -4,6 +4,7 @@ using Content.Server.NPC.HTN;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Shared._Crescent.DroneControl;
+using Content.Shared._Mono.Ships.Components;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.DeviceNetwork.Events;
@@ -12,6 +13,7 @@ using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Timing;
 
 namespace Content.Server._Crescent.DroneControl;
 
@@ -44,9 +46,26 @@ public sealed partial class DroneControlSystem : EntitySystem
         SubscribeLocalEvent<DroneControlConsoleComponent, DroneConsoleTargetMessage>(OnTargetMsg);
 
         SubscribeLocalEvent<DroneControlComponent, DeviceNetworkPacketEvent>(OnPacketReceived);
+        SubscribeLocalEvent<DroneControlComponent, ComponentStartup>(OnCompStartup); // Exodus
 
         _controlQuery = GetEntityQuery<DroneControlComponent>();
     }
+
+    // Exodus begin
+    private void OnCompStartup(Entity<DroneControlComponent> ent, ref ComponentStartup args)
+    {
+        if (ent.Comp.FirstVesselId != null)
+            return;
+
+        Timer.Spawn(200,
+            () =>
+            {
+                var grid = _transform.GetGrid(ent.Owner);
+                if (grid != null && TryComp<VesselComponent>(grid.Value, out var vessel))
+                    ent.Comp.FirstVesselId = vessel.VesselId.Id;
+            });
+    }
+    // Exodus end
 
     private void OnGetSources(Entity<DroneControlConsoleComponent> ent, ref GetRadarSourcesEvent args)
     {
@@ -174,7 +193,8 @@ public sealed partial class DroneControlSystem : EntitySystem
             if (xform.GridUid == null)
                 continue;
 
-            if (!_controlQuery.HasComp(device))
+            if (!_controlQuery.TryComp(device, out var comp) // Exodus
+                || comp.FirstVesselId != null && TryComp<VesselComponent>(xform.GridUid.Value, out var vessel) && vessel.VesselId.Id != comp.FirstVesselId)
             {
                 toRemove.Add(device);
                 continue;
@@ -226,6 +246,13 @@ public sealed partial class DroneControlSystem : EntitySystem
             {
                 if (!_controlQuery.TryComp(controller, out var controlComp) || controlComp.Autolinked)
                     continue;
+
+                // Exodus begin
+                if (controlComp.FirstVesselId != null
+                    && TryComp<VesselComponent>(shipUid, out var vessel)
+                    && vessel.VesselId.Id != controlComp.FirstVesselId)
+                    continue;
+                // Exodus end
 
                 controlComp.Autolinked = true;
                 newDrones.Add(controller);

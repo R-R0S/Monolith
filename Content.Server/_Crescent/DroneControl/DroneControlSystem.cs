@@ -57,7 +57,10 @@ public sealed partial class DroneControlSystem : EntitySystem
 
         var grid = _transform.GetGrid(ent.Owner);
         if (grid != null)
+        {
             ent.Comp.WorkingGrid = grid.Value;
+            Dirty(ent);
+        }
     }
     // Exodus end
 

@@ -15,8 +15,8 @@ public sealed partial class DroneControlComponent : Component
     [DataField]
     public string TargetKey = "DroneTarget";
 
-    // Exodus begin
+    // Exodus - dronovoz - begin
     [DataField]
-    public string? FirstVesselId;
+    public EntityUid? WorkingGrid;
     // Exodus end
 }

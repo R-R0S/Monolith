@@ -49,7 +49,7 @@ public sealed partial class DroneControlSystem : EntitySystem
         _controlQuery = GetEntityQuery<DroneControlComponent>();
     }
 
-    // Exodus - dronovoz - begin
+    // Exodus dronovoz begin
     private void OnCompStartup(Entity<DroneControlComponent> ent, ref ComponentStartup args)
     {
         if (ent.Comp.WorkingGrid != null)
@@ -190,7 +190,7 @@ public sealed partial class DroneControlSystem : EntitySystem
             if (xform.GridUid == null)
                 continue;
 
-            if (!_controlQuery.TryComp(device, out var comp) // Exodus - dronovoz
+            if (!_controlQuery.TryComp(device, out var comp) // Exodus dronovoz
                 || comp.WorkingGrid != null
                 && xform.GridUid != comp.WorkingGrid)
             {

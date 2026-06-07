@@ -57,10 +57,7 @@ public sealed partial class DroneControlSystem : EntitySystem
 
         var grid = _transform.GetGrid(ent.Owner);
         if (grid != null)
-        {
             ent.Comp.WorkingGrid = grid.Value;
-            Dirty(ent);
-        }
     }
     // Exodus end
 
@@ -247,7 +244,7 @@ public sealed partial class DroneControlSystem : EntitySystem
 
                 // Exodus dronovoz begin
                 if (controlComp.WorkingGrid != null
-                    && xform.GridUid != controlComp.WorkingGrid)
+                    && withXform.GridUid != controlComp.WorkingGrid)
                     continue;
                 // Exodus end
 

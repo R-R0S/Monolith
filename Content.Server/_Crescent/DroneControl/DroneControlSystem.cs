@@ -44,20 +44,22 @@ public sealed partial class DroneControlSystem : EntitySystem
         SubscribeLocalEvent<DroneControlConsoleComponent, DroneConsoleTargetMessage>(OnTargetMsg);
 
         SubscribeLocalEvent<DroneControlComponent, DeviceNetworkPacketEvent>(OnPacketReceived);
-        SubscribeLocalEvent<DroneControlComponent, ComponentStartup>(OnCompStartup); // Exodus dronovoz
+        SubscribeLocalEvent<DroneControlComponent, MapInitEvent>(OnMapInit); // Exodus dronovoz
 
         _controlQuery = GetEntityQuery<DroneControlComponent>();
     }
 
     // Exodus dronovoz begin
-    private void OnCompStartup(Entity<DroneControlComponent> ent, ref ComponentStartup args)
+    private void OnMapInit(Entity<DroneControlComponent> ent, ref MapInitEvent _)
     {
         if (ent.Comp.WorkingGrid != null)
             return;
 
         var grid = _transform.GetGrid(ent.Owner);
-        if (grid != null)
-            ent.Comp.WorkingGrid = grid.Value;
+        if (grid == null)
+            return;
+
+        ent.Comp.WorkingGrid = grid.Value;
     }
     // Exodus end
 
@@ -187,9 +189,8 @@ public sealed partial class DroneControlSystem : EntitySystem
             if (xform.GridUid == null)
                 continue;
 
-            if (!_controlQuery.TryComp(device, out var comp) // Exodus dronovoz
-                || comp.WorkingGrid != null
-                && xform.GridUid != comp.WorkingGrid)
+            if (!_controlQuery.TryComp(device, out var comp)
+                || (comp.WorkingGrid != null && xform.GridUid != comp.WorkingGrid)) // Exodus dronovoz
             {
                 toRemove.Add(device);
                 continue;

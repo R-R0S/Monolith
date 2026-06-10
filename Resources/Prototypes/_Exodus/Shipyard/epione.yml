@@ -12,6 +12,7 @@
   price: 190000 # Its a ~20k markup.
   category: Medium
   group: Medical
+  access: Medical
   shuttlePath: /Maps/_Exodus/Shuttles/epione.yml
   guidebookPage: Null
   class:

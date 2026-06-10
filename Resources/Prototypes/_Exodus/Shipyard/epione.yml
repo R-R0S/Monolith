@@ -11,8 +11,7 @@
   description: Современный военно-медицинский шаттл, предназначенный для спасательных операций и оказания медицинской помощи в самых тяжёлых условиях. Имеет на борту генератор щита MS-100 и весьма неплохое корабельное вооружение. Его задача — вытащить вас из любой беды, невзирая на угрозы.
   price: 190000 # Its a ~20k markup.
   category: Medium
-  group: Shipyard
-  access: Mercenary
+  group: Medical
   shuttlePath: /Maps/_Exodus/Shuttles/epione.yml
   guidebookPage: Null
   class:
@@ -39,5 +38,6 @@
         - type: StationJobs
           availableJobs:
             Contractor: [ 0, 0 ]
+            MdMedic: [ 0, 0 ]
             Pilot: [ 0, 0 ]
             Mercenary: [ 0, 0 ]

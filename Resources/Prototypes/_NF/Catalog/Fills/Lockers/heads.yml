@@ -71,6 +71,7 @@
       - id: NfsdTechFabFlatpack
       - id: ClothingEyesTSFOfficerGlasses
       - id: PhoneInstrumentHigh # Mono
+      - id: FederationMilitaryCredit25 # Exodus
 
 - type: entity
   parent: GunSafe

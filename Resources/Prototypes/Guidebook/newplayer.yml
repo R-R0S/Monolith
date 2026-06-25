@@ -11,14 +11,14 @@
 - type: guideEntry
   id: Controls
   name: guide-entry-controls
-  text: "/ServerInfo/Guidebook/NewPlayer/Controls/Controls.xml"
+  text: "/ServerInfo/_Exodus/Guidebook/NewPlayer/Controls/Controls.xml" # Exodus
   children:
   - Radio
 
 - type: guideEntry
   id: Radio
   name: guide-entry-radio
-  text: "/ServerInfo/Guidebook/NewPlayer/Controls/Radio.xml"
+  text: "/ServerInfo/_Exodus/Guidebook/NewPlayer/Controls/Radio.xml" # Exodus
 
 - type: guideEntry
   id: CharacterCreation

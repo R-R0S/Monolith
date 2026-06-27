@@ -1,0 +1,18 @@
+<Document>
+  # Дворфы
+
+  <Box>
+    <GuideEntityEmbed Entity="MobDwarf" Caption=""/>
+  </Box>
+
+  Индустриальный вид. Дворфы во многом похожи на людей, но лучше переносят алкоголь и исцеляются им.
+
+  <Box>
+    <GuideEntityEmbed Entity="WallRockChromiteDiamond" Caption=""/>
+    <GuideEntityEmbed Entity="WallRockBasaltBananium" Caption=""/>
+    <GuideEntityEmbed Entity="WallRockBluespace" Caption=""/>
+  </Box>
+
+  Дворф инстинктивно знает, где находятся лучшие рудные жилы, и способен чувствовать присутствие руды на расстоянии до 5 метров.
+
+</Document>

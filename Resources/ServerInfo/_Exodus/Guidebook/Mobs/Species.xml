@@ -1,0 +1,39 @@
+<Document>
+  # Расы
+
+  На просторах Эксодуса встречаются различные разумные расы.
+
+  <Box>
+    <GuideEntityEmbed Entity="MobArachnid" Caption=""/>
+    <GuideEntityEmbed Entity="MobDiona" Caption=""/>
+    <GuideEntityEmbed Entity="MobDwarf" Caption=""/>
+    <GuideEntityEmbed Entity="MobHuman" Caption=""/>
+    <GuideEntityEmbed Entity="MobVulpkanin" Caption=""/>
+  </Box>
+  <Box>
+  - [textlink="Арахнид" link="Arachnid"]
+  - [textlink="Диона" link="Diona"]
+  - [textlink="Дворф" link="Dwarf"]
+  - [textlink="Человек" link="Human"]
+  - [textlink="Вульпканин" link="Vulpkanin"]
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="MobMoth" Caption=""/>
+    <GuideEntityEmbed Entity="MobReptilian" Caption=""/>
+    <GuideEntityEmbed Entity="MobSlimePerson" Caption=""/>
+    <GuideEntityEmbed Entity="MobVox" Caption=""/>
+    <GuideEntityEmbed Entity="MobIPCDummy" Caption=""/>
+    <GuideEntityEmbed Entity="MobTajaran" Caption=""/>
+  </Box>
+  <Box>
+  - [textlink="Ниан" link="Moth"]
+  - [textlink="Унатх" link="Reptilian"]
+  - [textlink="Слаймолюд" link="SlimePerson"]
+  - [textlink="Вокс" link="Vox"]
+  - [textlink="К.П.Б." link="IPC"]
+  - [textlink="Таяран" link="Tajaran"]
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="MobKidan" Caption="Кидан"/>
+  </Box>
+</Document>

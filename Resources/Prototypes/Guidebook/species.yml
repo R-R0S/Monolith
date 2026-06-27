@@ -1,8 +1,9 @@
 - type: guideEntry
   id: Species
   name: guide-entry-species
-  text: "/ServerInfo/Guidebook/Mobs/Species.xml"
+  text: "/ServerInfo/_Exodus/Guidebook/Mobs/Species.xml" # Exodus
   children:
+  # TODO: Кидан
   - Arachnid
   - Diona # Note: Frontier changes inside
   - Dwarf # Note: Frontier changes inside
@@ -27,42 +28,42 @@
 - type: guideEntry
   id: Arachnid
   name: species-name-arachnid
-  text: "/ServerInfo/Guidebook/Mobs/Arachnid.xml"
+  text: "/ServerInfo/_Exodus/Guidebook/Mobs/Arachnid.xml" # Exodus
 
 - type: guideEntry
   id: Diona
   name: species-name-diona
-  text: "/ServerInfo/_NF/Guidebook/Mobs/Diona.xml" # Frontier: moved to _NF folder
+  text: "/ServerInfo/_Exodus/Guidebook/Mobs/Diona.xml" # Exodus
 
 - type: guideEntry
   id: Dwarf
   name: species-name-dwarf
-  text: "/ServerInfo/_NF/Guidebook/Mobs/Dwarf.xml" # Frontier: moved to _NF folder
+  text: "/ServerInfo/_Exodus/Guidebook/Mobs/Dwarf.xml" # Exodus
 
 - type: guideEntry
   id: Human
   name: species-name-human
-  text: "/ServerInfo/Guidebook/Mobs/Human.xml"
+  text: "/ServerInfo/_Exodus/Guidebook/Mobs/Human.xml" # Exodus
 
 - type: guideEntry
   id: Moth
   name: species-name-moth
-  text: "/ServerInfo/Guidebook/Mobs/Moth.xml"
+  text: "/ServerInfo/_Exodus/Guidebook/Mobs/Moth.xml" # Exodus
 
 - type: guideEntry
   id: Reptilian
   name: species-name-reptilian
-  text: "/ServerInfo/Guidebook/Mobs/_Mono/MonoReptilian.xml" # Mono
+  text: "/ServerInfo/_Exodus/Guidebook/Mobs/MonoReptilian.xml" # Exodus
 
 - type: guideEntry
   id: SlimePerson
   name: species-name-slime
-  text: "/ServerInfo/Guidebook/Mobs/SlimePerson.xml"
+  text: "/ServerInfo/_Exodus/Guidebook/Mobs/SlimePerson.xml" # Exodus
 
 - type: guideEntry
   id: Vox
   name: species-name-vox
-  text: "/ServerInfo/Guidebook/Mobs/Vox.xml"
+  text: "/ServerInfo/_Exodus/Guidebook/Mobs/Vox.xml" # Exodus
 
 # - type: guideEntry # Exodus-Removed
 #   id: Resomi
@@ -77,12 +78,12 @@
 - type: guideEntry
   id: IPC
   name: species-name-ipc
-  text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"
+  text: "/ServerInfo/_Exodus/Guidebook/Mobs/IPCs.xml" # Exodus
 
 - type: guideEntry
   id: Tajaran
   name: species-name-tajaran
-  text: "/ServerInfo/Guidebook/Mobs/Tajaran.xml"
+  text: "/ServerInfo/_Exodus/Guidebook/Mobs/Tajaran.xml" # Exodus
 
 # - type: guideEntry # Exodus-Removed
 #   id: Hydrakin

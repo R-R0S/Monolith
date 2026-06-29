@@ -79,15 +79,8 @@
       uiWindowPos: 0,4
       strippingWindowPos: 0,3
       displayName: inventory-slot-pocket-3 # Ru-Localization
-      # Exodus fix arachnid damage modify begin
-    # - name: outerClothing
-    #   slotTexture: suit
-    #   slotFlags: OUTERCLOTHING
-    #   stripTime: 6
-    #   uiWindowPos: 1,1
-    #   strippingWindowPos: 1,2
-    #   displayName: inventory-slot-outer-clothing # Ru-Localization
-      # Exodus end
+      # Exodus fix arachnid damage modify
+      # remove OUTERCLOTHING duble
     - name: pocket1
       slotTexture: pocket
       fullTextureName: template_small

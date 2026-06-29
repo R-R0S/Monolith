@@ -80,7 +80,7 @@
       strippingWindowPos: 0,3
       displayName: inventory-slot-pocket-3 # Ru-Localization
       # Exodus fix arachnid damage modify
-      # remove OUTERCLOTHING duble
+      # remove OUTERCLOTHING double
     - name: pocket1
       slotTexture: pocket
       fullTextureName: template_small

@@ -2,5 +2,5 @@ ent-ArachnidCube = арахнидский кубик
     .desc = { ent-MonkeyCube.desc }
 ent-ChickenCube = куриный кубик
     .desc = { ent-MonkeyCube.desc }
-ent-PigCube = Свиной кубик
+ent-PigCube = свиной кубик
     .desc = { ent-MonkeyCube.desc }

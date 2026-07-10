@@ -43,6 +43,11 @@ public sealed partial class JukeboxComponent : Component
     [DataField]
     public Vector2 AudioOffset = Vector2.Zero;
     // End Frontier
+
+    // Exodus - Volume slider to jukebox - begin
+    [DataField, AutoNetworkedField]
+    public float Gain = 0.75f;
+    // Exodus - Volume slider to jukebox - end
 }
 
 [Serializable, NetSerializable]
@@ -84,3 +89,11 @@ public enum JukeboxVisualLayers : byte
 {
     Base
 }
+
+// Exodus - Volume slider to jukebox - begin
+[Serializable, NetSerializable]
+public sealed class JukeboxSetGainMessage(float gain) : BoundUserInterfaceMessage
+{
+    public float Gain { get; } = gain;
+}
+// Exodus - Volume slider to jukebox - end

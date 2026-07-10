@@ -28,8 +28,8 @@ public sealed partial class JukeboxSystem : SharedJukeboxSystem
         SubscribeLocalEvent<JukeboxComponent, JukeboxSetTimeMessage>(OnJukeboxSetTime);
         SubscribeLocalEvent<JukeboxComponent, ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<JukeboxComponent, ComponentShutdown>(OnComponentShutdown);
-
         SubscribeLocalEvent<JukeboxComponent, PowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<JukeboxComponent, JukeboxSetGainMessage>(OnJukeboxSetGain); // Exodus - Volume slider to jukebox
 
         SubscribeLocalEvent<EntityTerminatingEvent>(OnEntityTerminating);
     }
@@ -41,6 +41,16 @@ public sealed partial class JukeboxSystem : SharedJukeboxSystem
             TryUpdateVisualState(uid, component);
         }
     }
+
+    // Exodus - Volume slider to jukebox - begin
+    private void OnJukeboxSetGain(Entity<JukeboxComponent> ent, ref JukeboxSetGainMessage args)
+    {
+        var newGain = Math.Clamp(args.Gain, 0f, 1f);
+        Audio.SetGain(ent.Comp.AudioStream, newGain);
+        ent.Comp.Gain = newGain;
+        Dirty(ent);
+    }
+    // Exodus - Volume slider to jukebox - end
 
     private void OnJukeboxPlay(EntityUid uid, JukeboxComponent component, ref JukeboxPlayingMessage args)
     {
@@ -58,8 +68,7 @@ public sealed partial class JukeboxSystem : SharedJukeboxSystem
                 return;
             }
 
-            var audioStream = Audio.PlayPvs(jukeboxProto.Path, uid, AudioParams.Default.WithMaxDistance(10f))?.Entity;
-
+            var audioStream = Audio.PlayPvs(jukeboxProto.Path, uid, AudioParams.Default.WithMaxDistance(10f).WithVolume(SharedAudioSystem.GainToVolume(component.Gain)))?.Entity; // Exodus - Volume slider to jukebox
             if (audioStream != null && Exists(audioStream.Value) && HasComp<MetaDataComponent>(audioStream.Value))
             {
                 component.AudioStream = audioStream;

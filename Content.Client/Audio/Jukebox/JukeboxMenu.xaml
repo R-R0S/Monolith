@@ -3,6 +3,13 @@
     <BoxContainer Margin="4 0" Orientation="Vertical">
         <ItemList Name="MusicList" SelectMode="Button" Margin="3 3 3 3"
         HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="8"/>
+        <!-- Exodus - Volume slider to jukebox - begin -->
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True"
+                      VerticalExpand="False" SizeFlagsStretchRatio="1">
+            <Label Name="Volume" Text="{Loc 'jukebox-menu-volume'}" />
+            <Slider Name="VolumeSlider" MinValue="0" Value="0.75" MaxValue="1" HorizontalExpand="True" />
+        </BoxContainer>
+        <!-- Exodus - Volume slider to jukebox - end -->
         <BoxContainer Orientation="Vertical">
             <Label Name="SongSelected" Text="{Loc 'jukebox-menu-selectedsong'}" />
             <Label Name="SongName" Text="---" />

@@ -45,7 +45,7 @@ public sealed partial class JukeboxSystem : SharedJukeboxSystem
     // Exodus - Volume slider to jukebox - begin
     private void OnJukeboxSetGain(Entity<JukeboxComponent> ent, ref JukeboxSetGainMessage args)
     {
-        if (float.IsFinite(args.Gain) || float.IsNaN(args.Gain))
+        if (!float.IsFinite(args.Gain))
             return;
 
         var newGain = Math.Clamp(args.Gain, 0f, 1f);

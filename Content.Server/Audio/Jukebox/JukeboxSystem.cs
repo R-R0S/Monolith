@@ -29,7 +29,7 @@ public sealed partial class JukeboxSystem : SharedJukeboxSystem
         SubscribeLocalEvent<JukeboxComponent, ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<JukeboxComponent, ComponentShutdown>(OnComponentShutdown);
         SubscribeLocalEvent<JukeboxComponent, PowerChangedEvent>(OnPowerChanged);
-        SubscribeLocalEvent<JukeboxComponent, JukeboxSetGainMessage>(OnJukeboxSetGain); // Exodus - Volume slider to jukebox
+        SubscribeLocalEvent<JukeboxComponent, JukeboxSetGainMessage>(OnJukeboxSetGain); // Exodus Volume slider to jukebox
 
         SubscribeLocalEvent<EntityTerminatingEvent>(OnEntityTerminating);
     }
@@ -42,7 +42,7 @@ public sealed partial class JukeboxSystem : SharedJukeboxSystem
         }
     }
 
-    // Exodus - Volume slider to jukebox - begin
+    // Exodus-begin Volume slider to jukebox 
     private void OnJukeboxSetGain(Entity<JukeboxComponent> ent, ref JukeboxSetGainMessage args)
     {
         if (!float.IsFinite(args.Gain))
@@ -53,7 +53,7 @@ public sealed partial class JukeboxSystem : SharedJukeboxSystem
         ent.Comp.Gain = newGain;
         Dirty(ent);
     }
-    // Exodus - Volume slider to jukebox - end
+    // Exodus-end
 
     private void OnJukeboxPlay(EntityUid uid, JukeboxComponent component, ref JukeboxPlayingMessage args)
     {
@@ -71,7 +71,7 @@ public sealed partial class JukeboxSystem : SharedJukeboxSystem
                 return;
             }
 
-            var audioStream = Audio.PlayPvs(jukeboxProto.Path, uid, AudioParams.Default.WithMaxDistance(10f).WithVolume(SharedAudioSystem.GainToVolume(component.Gain)))?.Entity; // Exodus - Volume slider to jukebox
+            var audioStream = Audio.PlayPvs(jukeboxProto.Path, uid, AudioParams.Default.WithMaxDistance(10f).WithVolume(SharedAudioSystem.GainToVolume(component.Gain)))?.Entity; // Exodus Volume slider to jukebox
             if (audioStream != null && Exists(audioStream.Value) && HasComp<MetaDataComponent>(audioStream.Value))
             {
                 component.AudioStream = audioStream;

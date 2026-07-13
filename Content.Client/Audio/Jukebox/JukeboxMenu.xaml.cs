@@ -28,7 +28,7 @@ public sealed partial class JukeboxMenu : FancyWindow
     public event Action? OnStopPressed;
     public event Action<ProtoId<JukeboxPrototype>>? OnSongSelected;
     public event Action<float>? SetTime;
-    public event Action<float>? SetGain; // Exodus - Volume slider to jukebox
+    public event Action<float>? SetGain; // Exodus Volume slider to jukebox
     private EntityUid? _audio;
 
     private float _lockTimer;
@@ -60,7 +60,7 @@ public sealed partial class JukeboxMenu : FancyWindow
         };
         PlaybackSlider.OnReleased += PlaybackSliderKeyUp;
 
-        VolumeSlider.OnReleased += VolumeSliderOnReleased; // Exodus - Volume slider to jukebox
+        VolumeSlider.OnReleased += VolumeSliderOnReleased; // Exodus Volume slider to jukebox
 
         SetPlayPauseButton(_audioSystem.IsPlaying(_audio), force: true);
     }
@@ -164,16 +164,15 @@ public sealed partial class JukeboxMenu : FancyWindow
         }
     }
 
-    // Exodus - Volume slider to jukebox - begin
+    // Exodus-begin Volume slider to jukebox 
     private void VolumeSliderOnReleased(Slider args)
     {
-        VolumeSlider.Value = Math.Clamp(args.Value, 0f, 1f);
-        SetGain?.Invoke(VolumeSlider.Value);
+        SetGain?.Invoke(args.Value);
     }
 
     public void SetGainValue(float gain)
     {
         VolumeSlider.Value = Math.Clamp(gain, 0f, 1f);
     }
-    // Exodus - Volume slider to jukebox - end
+    // Exodus-end 
 }

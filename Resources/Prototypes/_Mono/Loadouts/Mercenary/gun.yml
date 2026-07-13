@@ -26,6 +26,7 @@
   id: MercenaryPistol
   name: loadout-group-pistol
   minLimit: 0
+  maxLimit: 2 # Exodus 1 > 2
   loadouts:
   - MercenaryPollockLoadout
   - MercenaryMk58Loadout
@@ -39,6 +40,11 @@
   - MercenaryKukriKnifeLoadout
   - MercenaryThrowingKnifeLoadout
   - MercenaryMacheteLoadout
+  - MercenaryWeaponCrusherDaggerLoadout # Exodus add Crusher Dagger
+  - MercenaryPlasteelArmingSwordLoadout # Exodus add Plasteel Arming Sword
+  - MercenaryStunbatonLoadout # Exodus add Stunbaton
+  - MercenaryTruncheonLoadout # Exodus add Truncheon
+  - MercenaryEnergyDaggerLoudLoadout # Exodus add Energy Dagger
   fallbacks:
   - MercenaryPollockLoadout
 

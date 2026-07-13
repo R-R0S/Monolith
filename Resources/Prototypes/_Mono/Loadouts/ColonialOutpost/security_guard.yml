@@ -26,10 +26,12 @@
   fallbacks:
   - MonoSecurityGuardWebbing
 
-- type: loadout # Exodus add
+# Exodus-begin add Webbing Medical to loadout
+- type: loadout
   id: SecurityCombatWebbingMedical
   equipment:
     belt: ClothingBeltMilitaryWebbingMed
+# Exodus-end
 
 - type: loadout
   id: MonoSecurityGuardWebbing # Exodus delete name field

@@ -248,7 +248,7 @@
   equipment:
     belt: ClothingBeltSheathFilled
 
-# Exouds-begin add webbing medical to loadout
+# Exodus-begin add webbing to loadout
 - type: loadout
   id: ContractorCombatWebbingMedical
   price: 0

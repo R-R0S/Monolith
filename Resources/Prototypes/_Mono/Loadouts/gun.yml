@@ -56,7 +56,7 @@
     back:
     - SurvivalKnife
 
-# Exodus-begin add mele-weapon to loadout
+# Exodus-begin add melee-weapon to loadout
 - type: loadout # Crusher Dagger
   id: ContractorWeaponCrusherDaggerLoadout
   price: 600
@@ -418,7 +418,7 @@
     back:
     - CombatKnife
 
-# Exodus-begin add mele-weapon to loadout
+# Exodus-begin add melee-weapon to loadout
 - type: loadout # Crusher Dagger
   id: MercenaryWeaponCrusherDaggerLoadout
   price: 900
@@ -567,7 +567,7 @@
     back:
     - WeaponRifleAk
 
-# Exodus-begin add mele-weapon to loadout
+# Exodus-begin add melee-weapon to loadout
 - type: loadout # Stunbaton
   id: StationRepStunbatonLoadout
   price: 0
@@ -840,7 +840,7 @@
     back:
     - WeaponPistolViper
 
-# Exodus-begin add mele-weapon to loadout
+# Exodus-begin add melee-weapon to loadout
 - type: loadout # Energy Dagger Loud
   id: FactionEnergyDaggerLoudLoadout
   price: 0

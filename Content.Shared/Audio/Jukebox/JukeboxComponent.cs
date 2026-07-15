@@ -51,7 +51,7 @@ public sealed partial class JukeboxComponent : Component
 
     // Exodus-begin add category to songs
     [DataField, AutoNetworkedField]
-    public string? PlayerCategory = "jukebox";
+    public string PlayerCategory = "jukebox";
     // Exodus-end
 }
 

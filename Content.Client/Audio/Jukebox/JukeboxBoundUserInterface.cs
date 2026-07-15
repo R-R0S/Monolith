@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.Audio.Jukebox;
 using Robust.Client.Audio;
 using Robust.Client.UserInterface;
@@ -76,27 +77,20 @@ public sealed partial class JukeboxBoundUserInterface : BoundUserInterface
     // Exodus-begin add category to songs
     public void PopulateMusic()
     {
-        if (_menu == null || !EntMan.TryGetComponent(Owner, out JukeboxComponent? jukebox))
+        if (_menu == null || !EntMan.TryGetComponent<JukeboxComponent>(Owner, out var jukebox))
             return;
 
         PopulateMusic(jukebox);
     }
 
-    public void PopulateMusic(JukeboxComponent comp)
+    public void PopulateMusic(JukeboxComponent jukebox)
     {
         if (_menu == null)
             return;
 
-        var allSongs = _protoManager.EnumeratePrototypes<JukeboxPrototype>();
-        var availableSongs = new List<JukeboxPrototype>();
-        foreach (var song in allSongs)
-        {
-            if (song.SongCategory == comp.PlayerCategory)
-            {
-                availableSongs.Add(song);
-            }
-        }
-        _menu.Populate(availableSongs);
+        var songs = _protoManager.EnumeratePrototypes<JukeboxPrototype>()
+            .Where(song => song.SongCategory == jukebox.PlayerCategory);
+        _menu.Populate(songs);
     }
     // Exodus-end
 

@@ -23,6 +23,6 @@ public sealed partial class JukeboxPrototype : IPrototype
 
     // Exodus-begin add category to songs
     [DataField]
-    public string? SongCategory = "jukebox";
+    public string SongCategory = "jukebox";
     // Exodus-end
 }

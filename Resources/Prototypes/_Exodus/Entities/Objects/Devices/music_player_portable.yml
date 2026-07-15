@@ -1,0 +1,52 @@
+- type: entity
+  id: MusicPlayerPortableBase
+  parent: [BaseItem, PowerCellSlotSmallItem]
+  name: Портативный плеер
+  description: Осторожно, содержит музыку!
+#  categories:
+#  - HideSpawnMenu
+  components:
+  - type: MusicPlayerPortable
+  - type: Appearance
+  - type: Sprite
+    scale: 0.5, 0.5
+    sprite: _Exodus/Objects/Devices/mpplayer.rsi
+    layers:
+    - state: MP3player-base
+    - state: MP3player-off-overlay
+      shader: unshaded
+    - state: MP3player-on-overlay
+      visible: false
+      shader: unshaded
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+    - state: MP3player-base
+      map: ["enum.JukeboxVisualLayers.Base"]
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - neck
+  - type: Jukebox
+    onState: MP3player-base
+    offState: MP3player-base
+    selectState: MP3player-on-SEARCH
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerCellSlotVisuals.Enabled:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+  - type: PowerCellDraw
+    drawRate: 0.1
+    useRate: 0.1
+  - type: ToggleCellDraw
+    startEnabled: true
+  - type: ActivatableUIRequiresPowerCell
+  - type: ActivatableUI
+    key: enum.JukeboxUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.JukeboxUiKey.Key:
+        type: JukeboxBoundUserInterface
+  - type: StaticPrice
+    price: 20

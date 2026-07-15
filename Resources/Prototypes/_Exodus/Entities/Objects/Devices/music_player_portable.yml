@@ -29,12 +29,13 @@
     onState: MP3player-base
     offState: MP3player-base
     selectState: MP3player-on-SEARCH
-  - type: GenericVisualizer
-    visuals:
-      enum.PowerCellSlotVisuals.Enabled:
-        enum.PowerDeviceVisualLayers.Powered:
-          True: { visible: true }
-          False: { visible: false }
+  # Удаляем GenericVisualizer или оставляем, но он не будет мешать, т.к. система переопределяет слой
+  # - type: GenericVisualizer
+  #   visuals:
+  #     enum.PowerCellSlotVisuals.Enabled:
+  #       enum.PowerDeviceVisualLayers.Powered:
+  #         True: { visible: true }
+  #         False: { visible: false }
   - type: PowerCellDraw
     drawRate: 0.1
     useRate: 0.1

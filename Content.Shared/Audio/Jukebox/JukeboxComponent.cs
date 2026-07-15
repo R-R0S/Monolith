@@ -48,6 +48,9 @@ public sealed partial class JukeboxComponent : Component
     [DataField, AutoNetworkedField]
     public float Gain = 0.75f;
     // Exodus-end
+
+    [DataField, AutoNetworkedField]
+    public string? PlayerCategory = "jukebox";
 }
 
 [Serializable, NetSerializable]

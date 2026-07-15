@@ -75,7 +75,27 @@ public sealed partial class JukeboxBoundUserInterface : BoundUserInterface
 
     public void PopulateMusic()
     {
-        _menu?.Populate(_protoManager.EnumeratePrototypes<JukeboxPrototype>());
+        if (_menu == null || !EntMan.TryGetComponent(Owner, out JukeboxComponent? jukebox))
+            return;
+
+        PopulateMusic(jukebox);
+    }
+
+    public void PopulateMusic(JukeboxComponent comp)
+    {
+        if (_menu == null)
+            return;
+
+        var allSongs = _protoManager.EnumeratePrototypes<JukeboxPrototype>();
+        var availableSongs = new List<JukeboxPrototype>();
+        foreach (var song in allSongs)
+        {
+            if (song.SongCategory == comp.PlayerCategory)
+            {
+                availableSongs.Add(song);
+            }
+        }
+        _menu.Populate(availableSongs);
     }
 
     public void SelectSong(ProtoId<JukeboxPrototype> songid)

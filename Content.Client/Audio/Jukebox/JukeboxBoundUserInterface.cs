@@ -73,6 +73,7 @@ public sealed partial class JukeboxBoundUserInterface : BoundUserInterface
         }
     }
 
+    // Exodus-begin add category to songs
     public void PopulateMusic()
     {
         if (_menu == null || !EntMan.TryGetComponent(Owner, out JukeboxComponent? jukebox))
@@ -97,6 +98,7 @@ public sealed partial class JukeboxBoundUserInterface : BoundUserInterface
         }
         _menu.Populate(availableSongs);
     }
+    // Exodus-end
 
     public void SelectSong(ProtoId<JukeboxPrototype> songid)
     {

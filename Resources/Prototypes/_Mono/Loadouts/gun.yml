@@ -427,11 +427,11 @@
     - WeaponCrusherDagger
 
 - type: loadout # Plasteel Arming Sword
-  id: MercenaryPlasteelArmingSwordLoadout
-  price: 3600
+  id: MercenaryPlasteelArmingSwordEngraveableLoadout
+  price: 7000
   storage:
     back:
-    - PlasteelArmingSword
+    - PlasteelArmingSwordEngraveable
 
 - type: loadout # Stunbaton
   id: MercenaryStunbatonLoadout
@@ -446,13 +446,6 @@
   storage:
     back:
     - Truncheon
-
-- type: loadout # Energy Dagger Loud
-  id: MercenaryEnergyDaggerLoudLoadout
-  price: 30000
-  storage:
-    back:
-    - EnergyDaggerLoud
 # Exodus-end
 
 #region Security Guard
@@ -843,7 +836,7 @@
 # Exodus-begin add melee-weapon to loadout
 - type: loadout # Energy Dagger Loud
   id: FactionEnergyDaggerLoudLoadout
-  price: 0
+  price: 10000
   storage:
     back:
     - EnergyDaggerLoud

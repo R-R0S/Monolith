@@ -41,10 +41,9 @@
   - MercenaryThrowingKnifeLoadout
   - MercenaryMacheteLoadout
   - MercenaryWeaponCrusherDaggerLoadout # Exodus add Crusher Dagger
-  - MercenaryPlasteelArmingSwordLoadout # Exodus add Plasteel Arming Sword
+  - MercenaryPlasteelArmingSwordEngraveableLoadout # Exodus add Plasteel Arming Sword Engraveable
   - MercenaryStunbatonLoadout # Exodus add Stunbaton
   - MercenaryTruncheonLoadout # Exodus add Truncheon
-  - MercenaryEnergyDaggerLoudLoadout # Exodus add Energy Dagger
   fallbacks:
   - MercenaryPollockLoadout
 

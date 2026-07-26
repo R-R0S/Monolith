@@ -19,23 +19,24 @@
       visible: false
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-    - state: MP3player-base
+    - state: clear
+      shader: unshaded
+      visible: false
       map: ["enum.JukeboxVisualLayers.Base"]
   - type: Clothing
     quickEquip: false
     slots:
     - neck
   - type: Jukebox
-    onState: MP3player-base
-    offState: MP3player-base
+    onState: clear
+    offState: clear
     selectState: MP3player-on-SEARCH
-  # Удаляем GenericVisualizer или оставляем, но он не будет мешать, т.к. система переопределяет слой
-  # - type: GenericVisualizer
-  #   visuals:
-  #     enum.PowerCellSlotVisuals.Enabled:
-  #       enum.PowerDeviceVisualLayers.Powered:
-  #         True: { visible: true }
-  #         False: { visible: false }
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerCellSlotVisuals.Enabled:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
   - type: PowerCellDraw
     drawRate: 0.1
     useRate: 0.1

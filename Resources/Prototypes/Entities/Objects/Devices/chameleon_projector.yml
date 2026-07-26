@@ -20,8 +20,8 @@
       - MindContainer # no
       - Pda # PDAs currently make you invisible /!\
       tags:
-      - wall # Exodus - invisible fix
-      - window # Exodus - invisible fix
+      - Wall # Exodus - invisible fix
+      - Window # Exodus - invisible fix
     disguiseProto: ChameleonDisguise
 
 - type: entity

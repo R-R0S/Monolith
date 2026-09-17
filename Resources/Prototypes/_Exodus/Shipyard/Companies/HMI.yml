@@ -1,9 +1,11 @@
+# Шаттл regenerator под CLI Exodus
+# Авторство, Discord: @DegonX5 и @mq.gg
 - type: vessel
   id: regenerator
   parent: BaseVessel
   name: company-vessel-regenerator-name
   description: company-vessel-regenerator-description
-  price: 444444
+  price: 444444 # ~305k базовая цена
   category: Large
   group: Shipyard
   requiredCompanies:

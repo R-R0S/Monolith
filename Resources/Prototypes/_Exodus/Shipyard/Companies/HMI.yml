@@ -56,6 +56,10 @@
   group: Custom
   mapchecker_group_override: Shipyard
   shuttlePath: /SharedMaps/_Exodus/Shuttles/Companies/HMI/hmipod.yml
+  addComponents:
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
   guidebookPage: Null
   class:
   - Medical

@@ -80,7 +80,7 @@
       stationProto: StandardFrontierVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'ХМИ Труповозка{1}'
+        mapNameTemplate: 'Труповозка{1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

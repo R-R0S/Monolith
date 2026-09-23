@@ -7,3 +7,7 @@ company-vessel-horizon-siphon-description = A Horizon Energy gas barge optimized
 # HMI
 company-vessel-regenerator-name = Regenerator
 company-vessel-regenerator-description = This is a full‑fledged field hospital from Harmony Medical Enterprises, designed to treat all types of diseases in deep space. Suitable for autonomous operation by a large crew. Equipped with all the necessary medical equipment and the MS‑100 shield.
+
+# DME
+company-vessel-dme-umbra-name = DME «Umbra»
+company-vessel-dme-umbra-description = A heavy mining shuttle designed by Dark Matter Enterprises for autonomous resource extraction. The vessel is capable of processing entire asteroids thanks to a powerful system of industrial drills, plasma lasers, and a production department.

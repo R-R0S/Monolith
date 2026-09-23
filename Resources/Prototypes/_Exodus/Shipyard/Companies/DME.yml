@@ -24,7 +24,7 @@
 
 - type: gameMap
   id: DMEumbra
-  mapName: 'ДМЕ «Умбра»'
+  mapName: 'ДМИ «Умбра»'
   mapPath: /SharedMaps/_Exodus/Shuttles/Companies/DME/umbra.yml
   minPlayers: 0
   stations:

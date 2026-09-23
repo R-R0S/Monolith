@@ -1,11 +1,13 @@
-# Шаттл regenerator под CLI Exodus
-# Авторство, Discord: @DegonX5 и @mq.gg
+# Author's Info
+# GitHub: R-R0S Discord: mq.gg
+# Discord: DegonX5
+# Shuttle regenerator under Exodus CLA
 - type: vessel
   id: regenerator
   parent: BaseVessel
   name: company-vessel-regenerator-name
   description: company-vessel-regenerator-description
-  price: 444444 # ~305k базовая цена
+  price: 444444 # ~305k base price
   category: Large
   group: Shipyard
   requiredCompanies:
@@ -44,8 +46,10 @@
           Pilot: [ 0, 0 ]
           Mercenary: [ 0, 0 ]
 
-# Шаттл Труповозка под CLI Exodus
-# Авторство, Discord: @DegonX5 и @mq.gg
+# Author's Info
+# GitHub: R-R0S Discord: mq.gg
+# Discord: DegonX5
+# Shuttle HMIpod under Exodus CLA
 - type: vessel
   id: HMIpod
   parent: BaseVessel

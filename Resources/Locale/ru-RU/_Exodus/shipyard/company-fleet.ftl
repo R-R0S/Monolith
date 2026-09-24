@@ -7,6 +7,8 @@ company-vessel-horizon-siphon-description = Газовый баркас Horizon 
 # HMI
 company-vessel-regenerator-name = Регенератор
 company-vessel-regenerator-description = Это полноценный полевой госпиталь от корпорации Harmony Medical Enterprises, созданный для лечения всех типов заболеваний в глубоком космосе. Пригоден для автономного проживания большого экипажа. Оснащен всем необходимым медицинским оборудованием и щитом МС-100.
+company-vessel-HMI-pod-name = ХМИ «Труповозка»
+company-vessel-HMI-pod-desc = Мелкогабаритный медицинский шаттл быстрого реагирования, предназначенный для эвакуации и доставки пациентов.
 
 # DME
 company-vessel-dme-umbra-name = ДМИ «Умбра»

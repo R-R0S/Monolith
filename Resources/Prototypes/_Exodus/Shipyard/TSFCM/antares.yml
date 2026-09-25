@@ -16,7 +16,6 @@
     - TSFMC
   guidebookPage: Null
   class:
-  - Capital
   - Destroyer
   - Medical
   - Chemistry

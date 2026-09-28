@@ -11,7 +11,7 @@
     graph: MonoBannersGraph
     node: BannerPDVNode
   - type: Anchorable
-    delay: 60
+    delay: 5 # Exodus anchor takes 5 seconds
   - type: TerritoryBanner
     faction: PDV
 
@@ -28,7 +28,7 @@
     graph: MonoBannersGraph
     node: BannerKhsiraNode
   - type: Anchorable
-    delay: 60
+    delay: 5 # Exodus anchor takes 5 seconds
   - type: TerritoryBanner
     faction: Khsira
 
@@ -45,7 +45,7 @@
     graph: MonoBannersGraph
     node: BannerUSSPNode
   - type: Anchorable
-    delay: 60
+    delay: 5 # Exodus anchor takes 5 seconds
   - type: TerritoryBanner
     faction: USSP
 
@@ -58,7 +58,7 @@
     sprite: _NF/Structures/Decoration/banner.rsi
     state: banner
   - type: Anchorable
-    delay: 30 # Exodus - corporate banners anchor in half the faction time
+    delay: 5 # Exodus anchor takes 5 seconds
 
 - type: entity
   id: CompanyTerritoryBannerDrake

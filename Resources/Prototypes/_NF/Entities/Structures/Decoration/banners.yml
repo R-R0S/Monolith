@@ -12,7 +12,7 @@
     node: BannerSecurityNode
   # Exodus start - territory claim banner for TSFMC
   - type: Anchorable
-    delay: 60
+    delay: 5 # Exodus anchor takes 5 seconds
   - type: TerritoryBanner
     faction: TSFMC
   # Exodus end

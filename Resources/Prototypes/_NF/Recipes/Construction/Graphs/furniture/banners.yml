@@ -122,10 +122,10 @@
           steps:
             - material: Steel
               amount: 2
-              doAfter: 30 # Exodus - territory banner install time
+              doAfter: 5 # Exodus - territory banner install time
             - material: Cloth
               amount: 2
-              doAfter: 30 # Exodus - territory banner install time
+              doAfter: 5 # Exodus - territory banner install time
         - to: BannerGoblin01
           completed:
             - !type:SnapToGrid { }

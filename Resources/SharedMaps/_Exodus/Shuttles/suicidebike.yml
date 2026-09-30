@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.2.1
   forkId: ""
   forkVersion: ""
-  time: 09/21/2026 13:39:27
-  entityCount: 52
+  time: 09/30/2026 02:54:15
+  entityCount: 53
 maps: []
 grids:
 - 1
@@ -51,10 +51,11 @@ entities:
     - type: ThermalSignature
     - type: SpreaderGrid
       spreadQueues:
-        Smoke: []
         Puddle: []
-        MetalFoam: []
+        ExodusBiohazardFoam: []
         Kudzu: []
+        MetalFoam: []
+        Smoke: []
     - type: Shuttle
       dampingModifier: 0.25
     - type: ImplicitRoof
@@ -75,6 +76,7 @@ entities:
       locked: False
     - type: ExplosionAirtightGrid
     - type: RadiationGridResistance
+    - type: RotColonySiteTree
 - proto: AirlockGlassShuttle
   entities:
   - uid: 52
@@ -371,5 +373,13 @@ entities:
     components:
     - type: Transform
       pos: 1.5,2.5
+      parent: 1
+- proto: WarpPoint
+  entities:
+  - uid: 53
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 0.5,5.5
       parent: 1
 ...

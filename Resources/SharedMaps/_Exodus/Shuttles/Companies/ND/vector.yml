@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.2.1
   forkId: ""
   forkVersion: ""
-  time: 09/30/2026 02:12:33
-  entityCount: 986
+  time: 09/30/2026 05:31:53
+  entityCount: 1005
 maps: []
 grids:
 - 1
@@ -84,11 +84,11 @@ entities:
     - type: ThermalSignature
     - type: SpreaderGrid
       spreadQueues:
-        Puddle: []
         ExodusBiohazardFoam: []
-        Kudzu: []
+        Puddle: []
         MetalFoam: []
         Smoke: []
+        Kudzu: []
     - type: Shuttle
       dampingModifier: 0.25
     - type: ImplicitRoof
@@ -1082,7 +1082,7 @@ entities:
   - uid: 30
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 1.5707963267948966 rad
       pos: 3.5,-8.5
       parent: 1
 - proto: AirlockStandardGlass
@@ -2734,6 +2734,60 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 13.5,4.5
       parent: 1
+  - uid: 987
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 0.5,-7.5
+      parent: 1
+  - uid: 988
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 0.5,-8.5
+      parent: 1
+  - uid: 989
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 2.5,-7.5
+      parent: 1
+  - uid: 990
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 1.5,-7.5
+      parent: 1
+  - uid: 991
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 0.5,-9.5
+      parent: 1
+  - uid: 992
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 1.5,-9.5
+      parent: 1
+  - uid: 993
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 2.5,-8.5
+      parent: 1
+  - uid: 994
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 2.5,-9.5
+      parent: 1
+  - uid: 995
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 1.5,-8.5
+      parent: 1
 - proto: CatwalkMono
   entities:
   - uid: 344
@@ -3042,6 +3096,13 @@ entities:
     components:
     - type: Transform
       pos: 4.5,3.5
+      parent: 1
+- proto: DrinkBeerCan
+  entities:
+  - uid: 1003
+    components:
+    - type: Transform
+      pos: 2.0082626,-4.308295
       parent: 1
 - proto: DrinkGlass
   entities:
@@ -4702,6 +4763,35 @@ entities:
     - type: Transform
       pos: 12.5,11.5
       parent: 1
+- proto: GygaxArmorPlate
+  entities:
+  - uid: 1000
+    components:
+    - type: Transform
+      pos: 1.57354,-3.3130758
+      parent: 1
+- proto: GygaxCentralElectronics
+  entities:
+  - uid: 996
+    components:
+    - type: Transform
+      pos: 4.649816,-1.2449613
+      parent: 1
+- proto: GygaxChassis
+  entities:
+  - uid: 715
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 1.5129333,-3.440779
+      parent: 1
+- proto: GygaxPeripheralsElectronics
+  entities:
+  - uid: 997
+    components:
+    - type: Transform
+      pos: 4.7068496,-1.5871665
+      parent: 1
 - proto: Gyroscope
   entities:
   - uid: 592
@@ -4902,6 +4992,21 @@ entities:
     - type: Transform
       pos: 0.5,4.5
       parent: 1
+- proto: MechAirTank
+  entities:
+  - uid: 999
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 0.9854014,-4.271316
+      parent: 1
+- proto: MechThruster
+  entities:
+  - uid: 998
+    components:
+    - type: Transform
+      pos: 0.8818357,-2.6400437
+      parent: 1
 - proto: MedicalBed
   entities:
   - uid: 614
@@ -4962,6 +5067,13 @@ entities:
     components:
     - type: Transform
       pos: 5.5,5.5
+      parent: 1
+- proto: OreCatcherMachine
+  entities:
+  - uid: 1004
+    components:
+    - type: Transform
+      pos: 13.5,5.5
       parent: 1
 - proto: OreProcessorIndustrial
   entities:
@@ -5332,6 +5444,13 @@ entities:
     - type: Transform
       pos: 0.5,-5.5
       parent: 1
+- proto: PuddleVomit
+  entities:
+  - uid: 1002
+    components:
+    - type: Transform
+      pos: 2.5,-4.5
+      parent: 1
 - proto: Rack
   entities:
   - uid: 669
@@ -5700,6 +5819,18 @@ entities:
         59:
         - - Pressed
           - Toggle
+  - uid: 1005
+    components:
+    - type: MetaData
+      desc: Активация ловушки руд.
+    - type: Transform
+      pos: 14.5,8.5
+      parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        1004:
+        - - Pressed
+          - On
 - proto: SignAnomaly
   entities:
   - uid: 707
@@ -5762,13 +5893,6 @@ entities:
     components:
     - type: Transform
       pos: 14.5,-3.5
-      parent: 1
-- proto: SpawnMechGygax
-  entities:
-  - uid: 715
-    components:
-    - type: Transform
-      pos: 1.5,-3.5
       parent: 1
 - proto: SpawnPointContractor
   entities:
@@ -7217,7 +7341,7 @@ entities:
   - uid: 953
     components:
     - type: Transform
-      pos: 4.480093,-1.5369067
+      pos: 4.393162,-1.615684
       parent: 1
 - proto: WeaponTurretM25
   entities:
@@ -7244,6 +7368,14 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 15.5,4.5
+      parent: 1
+- proto: Welder
+  entities:
+  - uid: 1001
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 2.3362095,-3.7236938
       parent: 1
 - proto: WindoorSecureUranium
   entities:

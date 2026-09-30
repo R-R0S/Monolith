@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.2.1
   forkId: ""
   forkVersion: ""
-  time: 09/30/2026 05:31:53
-  entityCount: 1005
+  time: 09/30/2026 22:30:36
+  entityCount: 1000
 maps: []
 grids:
 - 1
@@ -85,9 +85,9 @@ entities:
     - type: SpreaderGrid
       spreadQueues:
         ExodusBiohazardFoam: []
-        Puddle: []
-        MetalFoam: []
         Smoke: []
+        MetalFoam: []
+        Puddle: []
         Kudzu: []
     - type: Shuttle
       dampingModifier: 0.25
@@ -4763,35 +4763,6 @@ entities:
     - type: Transform
       pos: 12.5,11.5
       parent: 1
-- proto: GygaxArmorPlate
-  entities:
-  - uid: 1000
-    components:
-    - type: Transform
-      pos: 1.57354,-3.3130758
-      parent: 1
-- proto: GygaxCentralElectronics
-  entities:
-  - uid: 996
-    components:
-    - type: Transform
-      pos: 4.649816,-1.2449613
-      parent: 1
-- proto: GygaxChassis
-  entities:
-  - uid: 715
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 1.5129333,-3.440779
-      parent: 1
-- proto: GygaxPeripheralsElectronics
-  entities:
-  - uid: 997
-    components:
-    - type: Transform
-      pos: 4.7068496,-1.5871665
-      parent: 1
 - proto: Gyroscope
   entities:
   - uid: 592
@@ -4991,21 +4962,6 @@ entities:
     components:
     - type: Transform
       pos: 0.5,4.5
-      parent: 1
-- proto: MechAirTank
-  entities:
-  - uid: 999
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 0.9854014,-4.271316
-      parent: 1
-- proto: MechThruster
-  entities:
-  - uid: 998
-    components:
-    - type: Transform
-      pos: 0.8818357,-2.6400437
       parent: 1
 - proto: MedicalBed
   entities:
@@ -5893,6 +5849,13 @@ entities:
     components:
     - type: Transform
       pos: 14.5,-3.5
+      parent: 1
+- proto: SpawnMechClarke
+  entities:
+  - uid: 715
+    components:
+    - type: Transform
+      pos: 1.5,-3.5
       parent: 1
 - proto: SpawnPointContractor
   entities:

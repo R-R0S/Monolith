@@ -15,6 +15,7 @@
     - NanoTrasen
   guidebookPage: Null
   class:
+  - Mercenary
   - Salvage
   - Cargo
   engine:

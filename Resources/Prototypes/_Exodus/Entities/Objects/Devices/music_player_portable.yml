@@ -5,6 +5,7 @@
   description: Warning, contains music!
   components:
   - type: MusicPlayerPortable
+    drawRate: 0.05
   - type: Appearance
   - type: Sprite
     scale: 0.5, 0.5
@@ -35,8 +36,7 @@
           True: { visible: true }
           False: { visible: false }
   - type: PowerCellDraw
-    drawRate: 0.05
-    useRate: 0.05
+    drawRate: 0
   - type: ToggleCellDraw
   - type: ActivatableUIRequiresPowerCell
   - type: ActivatableUI
@@ -53,6 +53,8 @@
   id: MusicPlayerPortableGold
   parent: MusicPlayerPortableBase
   components:
+  - type: MusicPlayerPortable
+    drawRate: 0.005
   - type: Sprite
     scale: 0.5, 0.5
     sprite: _Exodus/Objects/Devices/mpplayer.rsi
@@ -69,7 +71,6 @@
       visible: false
       map: ["enum.JukeboxVisualLayers.Base"]
   - type: PowerCellDraw
-    drawRate: 0.001
-    useRate: 0.001
+    drawRate: 0
   - type: StaticPrice
     price: 3500

@@ -28,7 +28,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map; // Exodus: stage persistent entities safely in nullspace.
 using Robust.Shared.Network; // Exodus: retain the authenticated account ID across awaits.
-using Robust.Shared.Toolshed.TypeParsers; // Exodus: retain the authenticated account ID across awaits.
 
 namespace Content.Server._WF.SafetyDepositBox;
 

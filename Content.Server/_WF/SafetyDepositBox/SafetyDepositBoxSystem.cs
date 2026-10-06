@@ -8,14 +8,18 @@ using Content.Server.Hands.Systems;
 using Content.Server.Popups;
 using Content.Server.Preferences.Managers;
 using Content.Server._NF.Bank;
+using Content.Server.Construction;
+using Content.Server.Construction.Components;
 using Content.Shared._NF.Bank.Components;
 using Content.Shared._WF.SafetyDepositBox.BUI;
 using Content.Shared._WF.SafetyDepositBox.Components;
 using Content.Shared._WF.SafetyDepositBox.Events;
+using Content.Shared.Construction.Components;
 using Content.Shared.Database;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Interaction;
 using Content.Shared.Item;
 using Content.Shared.Labels.Components;
 using Content.Shared.Labels.EntitySystems;
@@ -80,7 +84,11 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         SubscribeLocalEvent<SafetyDepositBoxComponent, ContainerIsInsertingAttemptEvent>(OnContainerInsertAttempt);
         SubscribeLocalEvent<SafetyDepositBoxComponent, ContainerIsRemovingAttemptEvent>(OnContainerRemoveAttempt);
         // Exodus-end
-        SubscribeLocalEvent<ItemSlotsComponent, ItemSlotInsertAttemptEvent>(OnItemSlotInsert); // Exodus-add additional checks
+        // Exodus-begin: additional checks
+        SubscribeLocalEvent<ItemSlotsComponent, ItemSlotInsertAttemptEvent>(OnItemSlotInsert);
+        SubscribeLocalEvent<ItemComponent, ConstructionToolUseStartedEvent>(OnConstructionToolUseStarted);
+        SubscribeLocalEvent<ItemComponent, GetConstructionToolUseDurationEvent>(OnGetConstructionToolUseDuration);
+        // Exodus-end
     }
 
     private void OnConsoleInit(EntityUid uid, SafetyDepositConsoleComponent component, ComponentInit args)
@@ -787,8 +795,10 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
                _activeBoxOperations.Contains(boxId) &&
                !_allowedBoxMutations.Contains(boxId);
     }
+    // Exodus-end
 
-    private bool CanInsertChildren(EntityUid item, EntityUid storage) // Exodus-add additional checks
+    // Exodus-begin: additional checks
+    private bool CanInsertChildren(EntityUid item, EntityUid storage)
     {
             var childEnumerator = Transform(item).ChildEnumerator;
             while (childEnumerator.MoveNext(out var childUid))
@@ -803,7 +813,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
 
     private void OnItemSlotInsert(
         Entity<ItemSlotsComponent> ent,
-        ref ItemSlotInsertAttemptEvent args) // Exodus-add additional checks
+        ref ItemSlotInsertAttemptEvent args)
     {
         if (!_container.TryGetContainingContainer(args.SlotEntity, out var baseContainer)
             || !HasComp<SafetyDepositBoxComponent>(baseContainer.Owner)
@@ -813,6 +823,29 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         args.Cancelled = true;
         if (args.User != null && reason != null)
             _popup.PopupEntity(Loc.GetString(reason), args.User.Value);
+    }
+
+    private void OnGetConstructionToolUseDuration(
+        EntityUid item,
+        ItemComponent component,
+        GetConstructionToolUseDurationEvent args)
+    {
+        if (!_container.TryGetContainingContainer(item, out var baseContainer)
+            || !HasComp<SafetyDepositBoxComponent>(baseContainer.Owner))
+            return;
+
+        _transform.DropNextTo(item, baseContainer.Owner);
+    }
+
+    private void OnConstructionToolUseStarted(EntityUid item,
+        ItemComponent component,
+        ConstructionToolUseStartedEvent args)
+    {
+        if (!_container.TryGetContainingContainer(item, out var baseContainer)
+            || !HasComp<SafetyDepositBoxComponent>(baseContainer.Owner))
+            return;
+
+        _transform.DropNextTo(item, baseContainer.Owner);
     }
     // Exodus-end
 

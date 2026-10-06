@@ -81,7 +81,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         SubscribeLocalEvent<SafetyDepositBoxComponent, ContainerIsInsertingAttemptEvent>(OnContainerInsertAttempt);
         SubscribeLocalEvent<SafetyDepositBoxComponent, ContainerIsRemovingAttemptEvent>(OnContainerRemoveAttempt);
         // Exodus-end
-        SubscribeLocalEvent<ItemSlotsComponent, ItemSlotInsertAttemptEvent>(OnItemSlotInsert); // Exodus-add aditional checks
+        SubscribeLocalEvent<ItemSlotsComponent, ItemSlotInsertAttemptEvent>(OnItemSlotInsert); // Exodus-add additional checks
     }
 
     private void OnConsoleInit(EntityUid uid, SafetyDepositConsoleComponent component, ComponentInit args)

@@ -139,7 +139,7 @@ public sealed partial class AiRemoteControlSystem : SharedAiRemoteControlSystem
 
     public void AiTakeControl(EntityUid ai, EntityUid entity)
     {
-        if (!_mind.TryGetMind(ai, out var mindId, out var mind))
+        if (!HasComp<ActorComponent>(ai) || !_mind.TryGetMind(ai, out var mindId, out var mind)) // Exodus: remote control requires an attached player.
             return;
 
         if (_mind.TryGetMind(entity, out _, out _))
@@ -151,8 +151,13 @@ public sealed partial class AiRemoteControlSystem : SharedAiRemoteControlSystem
         if (!TryComp<AiRemoteControllerComponent>(entity, out var aiRemoteComp))
             return;
 
-        if (!_map.TryFindGridAt(Transform(ai).MapPosition, out var grid, out var _) || Transform(entity).GridUid != grid)
-            return; // Mono no controlling borgs outside the ai's grid.
+        // Exodus-begin remote-ai-reconnection
+        var isOnAiGrid = _map.TryFindGridAt(Transform(ai).MapPosition, out var grid, out var _) &&
+                         Transform(entity).GridUid == grid;
+
+        if (!isOnAiGrid && aiRemoteComp.LastControllerMind != mindId)
+            return;
+        // Exodus-end
 
         // Exodus-begin ai-remote-power-check
         if (!HasRemotePower(entity, out var failMessage))
@@ -178,11 +183,15 @@ public sealed partial class AiRemoteControlSystem : SharedAiRemoteControlSystem
                 activeRadio.Channels = [.. stationAiActiveRadio.Channels];
         }
 
-        _mind.ControlMob(ai, entity);
+        // Exodus-begin: reserve the AI before transferring its mind to the remote body.
         aiRemoteComp.AiHolder = ai;
         aiRemoteComp.LinkedMind = mindId;
+        aiRemoteComp.LastControllerMind = mindId; // Exodus remote-ai-reconnection
 
         stationAiHeldComp.CurrentConnectedEntity = entity;
+
+        _mind.ControlMob(ai, entity);
+        // Exodus-end
 
         if (!_stationAiSystem.TryGetCore(ai, out var stationAiCore))
             return;
@@ -196,6 +205,12 @@ public sealed partial class AiRemoteControlSystem : SharedAiRemoteControlSystem
     {
         if (args.Handled || !TryComp<ActorComponent>(args.Performer, out var actor))
             return;
+
+        // Exodus-begin remote-ai-reconnection
+        if (!_mind.TryGetMind(uid, out var mindId, out _))
+            return;
+        // Exodus-end
+
         args.Handled = true;
 
         _userInterface.TryToggleUi(uid, RemoteDeviceUiKey.Key, actor.PlayerSession);
@@ -206,8 +221,11 @@ public sealed partial class AiRemoteControlSystem : SharedAiRemoteControlSystem
 
         while (query.MoveNext(out var queryUid, out var comp))
         {
-            if (Transform(queryUid).GridUid != aiGrid)
+            // Exodus-begin remote-ai-reconnection
+            if (Transform(queryUid).GridUid != aiGrid && comp.LastControllerMind != mindId)
                 continue;
+            // Exodus-end
+
             var data = new RemoteDevicesData
             {
                 NetEntityUid = GetNetEntity(queryUid),

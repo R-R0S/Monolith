@@ -2,6 +2,7 @@
   id: USSPRifleman
   name: job-name-ussp-rifleman
   description: job-description-ussp-rifleman
+  setPreference: false # Exodus disable-ussp-faction
   playTimeTracker: JobUSSPRifleman
   requirements:
   - !type:OverallPlaytimeRequirement
@@ -26,6 +27,10 @@
     - type: NpcFactionMember
       factions:
       - USSP
+    # Exodus-begin preserve existing role settings
+    - type: ChatRank
+      rank: ussp-rifleman
+    # Exodus-end
   - !type:AddLanguageSpecial
     languagesSpoken:
     - NovaCygniBasic

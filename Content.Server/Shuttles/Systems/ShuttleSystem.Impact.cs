@@ -27,6 +27,7 @@ using System.Numerics;
 
 using Content.Server._Mono.Cleanup;
 using Content.Shared._Mono.CCVar;
+using Content.Shared._Exodus.ShipArmor; // Exodus dynamic armor tile protection
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -172,8 +173,11 @@ public sealed partial class ShuttleSystem
 
 
             // Check if either grid has GridGodMode or ForceAnchor protection
-            var ourProtected = HasComp<GridGodModeComponent>(args.OurEntity) || HasComp<ForceAnchorComponent>(args.OurEntity);
-            var otherProtected = HasComp<GridGodModeComponent>(args.OtherEntity) || HasComp<ForceAnchorComponent>(args.OtherEntity);
+            // Exodus: a released station no longer gets immovable-station collision immunity.
+            var ourProtected = HasComp<GridGodModeComponent>(args.OurEntity) || HasComp<ForceAnchorComponent>(args.OurEntity)
+                && !HasComp<Content.Shared._Exodus.Shuttles.GridAnchorReleasedComponent>(args.OurEntity);
+            var otherProtected = HasComp<GridGodModeComponent>(args.OtherEntity) || HasComp<ForceAnchorComponent>(args.OtherEntity)
+                && !HasComp<Content.Shared._Exodus.Shuttles.GridAnchorReleasedComponent>(args.OtherEntity);
 
             // Check if the grids are docked together to prevent impact
             var areGridsDocked = _dockSystem.AreGridsDocked(args.OurEntity, args.OtherEntity);
@@ -480,7 +484,12 @@ public sealed partial class ShuttleSystem
             // Mark tiles for breaking/effects
             var def = _turf.GetContentTileDefinition(_mapSystem.GetTileRef(uid, grid, tileData.Tile));
             if (tileData.Energy > def.Mass * _tileBreakEnergyMultiplier)
-                brokenTiles.Add((tileData.Tile, Tile.Empty));
+            {
+                var tileDamage = new ShipArmorTileDamageEvent(uid, tileData.Tile, tileData.Energy);
+                RaiseLocalEvent(uid, ref tileDamage); // Exodus dynamic armor tile protection
+                if (!tileDamage.Cancelled)
+                    brokenTiles.Add((tileData.Tile, Tile.Empty));
+            }
 
         }
     }

@@ -37,6 +37,7 @@
           False: { visible: false }
   - type: PowerCellDraw
     drawRate: 0
+    useRate: 0.05
   - type: ToggleCellDraw
   - type: ActivatableUIRequiresPowerCell
   - type: ActivatableUI
@@ -72,5 +73,6 @@
       map: ["enum.JukeboxVisualLayers.Base"]
   - type: PowerCellDraw
     drawRate: 0
+    useRate: 0.005
   - type: StaticPrice
     price: 3500

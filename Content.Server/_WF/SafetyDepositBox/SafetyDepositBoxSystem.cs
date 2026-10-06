@@ -16,6 +16,7 @@ using Content.Shared.Database;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Item;
 using Content.Shared.Labels.Components;
 using Content.Shared.Labels.EntitySystems;
 using Content.Shared.Preferences;
@@ -26,7 +27,8 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map; // Exodus: stage persistent entities safely in nullspace.
-using Robust.Shared.Network; // Exodus: retain the authenticated account ID across awaits.
+using Robust.Shared.Network;
+using Robust.Shared.Toolshed.TypeParsers; // Exodus: retain the authenticated account ID across awaits.
 
 namespace Content.Server._WF.SafetyDepositBox;
 
@@ -50,6 +52,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
     [Dependency] private MapLoaderSystem _loader = default!;
     [Dependency] private MonoCoinsManager _coinBase = default!; // I had to.
     [Dependency] private ISharedPlayerManager _playerManager = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
 
     // Exodus-begin: serialize persistence operations and discard stale per-player UI queries.
     private readonly HashSet<Guid> _activePurchaseUsers = [];
@@ -78,6 +81,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         SubscribeLocalEvent<SafetyDepositBoxComponent, ContainerIsInsertingAttemptEvent>(OnContainerInsertAttempt);
         SubscribeLocalEvent<SafetyDepositBoxComponent, ContainerIsRemovingAttemptEvent>(OnContainerRemoveAttempt);
         // Exodus-end
+        SubscribeLocalEvent<ItemSlotsComponent, ItemSlotInsertAttemptEvent>(OnItemSlotInsert); // Exodus-add aditional checks
     }
 
     private void OnConsoleInit(EntityUid uid, SafetyDepositConsoleComponent component, ComponentInit args)
@@ -766,6 +770,10 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
     {
         if (args.Container.ID == StorageComponent.ContainerId && IsBoxMutationBlocked(ent.Comp))
             args.Cancel();
+
+        if (!CanInsertChildren(args.EntityUid, ent.Owner))    // Exodus-add additional checks
+            args.Cancel();
+
     }
 
     private void OnContainerRemoveAttempt(Entity<SafetyDepositBoxComponent> ent, ref ContainerIsRemovingAttemptEvent args)
@@ -779,6 +787,33 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         return component.BoxId is { } boxId &&
                _activeBoxOperations.Contains(boxId) &&
                !_allowedBoxMutations.Contains(boxId);
+    }
+
+    private bool CanInsertChildren(EntityUid item, EntityUid storage)    // Exodus-add additional checks
+    {
+            var childEnumerator = Transform(item).ChildEnumerator;
+            while (childEnumerator.MoveNext(out var childUid))
+            {
+                if (HasComp<ItemComponent>(childUid)
+                    && !_storage.CanInsert(storage, childUid, out _, ignoreLocation: true))
+                    return false;
+            }
+
+            return true;
+    }
+
+    private void OnItemSlotInsert(
+        Entity<ItemSlotsComponent> ent,
+        ref ItemSlotInsertAttemptEvent args)    // Exodus-add additional checks
+    {
+        if (!_container.TryGetContainingContainer(args.SlotEntity, out var baseContainer)
+            || !HasComp<SafetyDepositBoxComponent>(baseContainer.Owner)
+            || _storage.CanInsert(baseContainer.Owner, args.Item, out var reason, ignoreLocation: true))
+            return;
+
+        args.Cancelled = true;
+        if (args.User != null && reason != null)
+            _popup.PopupEntity(Loc.GetString(reason), args.User.Value);
     }
     // Exodus-end
 

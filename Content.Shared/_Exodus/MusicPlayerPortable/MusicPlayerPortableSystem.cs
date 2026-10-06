@@ -1,5 +1,4 @@
 using Content.Shared.Audio.Jukebox;
-using Content.Shared.Power.Components;
 using Content.Shared.PowerCell;
 using Content.Shared.PowerCell.Components;
 using Robust.Shared.Audio.Components;
@@ -7,9 +6,8 @@ using Robust.Shared.Audio.Systems;
 
 namespace Content.Shared._Exodus.MusicPlayerPortable;
 
-public sealed class MusicPlayerPortableSystem : EntitySystem
+public sealed partial class MusicPlayerPortableSystem : EntitySystem
 {
-    [Dependency] private SharedAppearanceSystem _appearanceSystem = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedUserInterfaceSystem _ui = default!;
 
@@ -17,7 +15,6 @@ public sealed class MusicPlayerPortableSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<MusicPlayerPortableComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<MusicPlayerPortableComponent, PowerCellSlotEmptyEvent>(OnPowerCellSlotEmpty);
         SubscribeLocalEvent<MusicPlayerPortableComponent, PowerCellChangedEvent>(OnPowerCellChanged);
     }
@@ -59,18 +56,4 @@ public sealed class MusicPlayerPortableSystem : EntitySystem
 
         Dirty(ent, jukebox);
     }
-
-    private void UpdateVisual(EntityUid ent, bool hasPower = false)
-    {
-        // if (!TryComp<AppearanceComponent>(ent, out var appearance))
-        //     return;
-        //
-        // _appearanceSystem.SetData(ent, PoweredPlayerVisualLayers.Powered, hasPower, appearance);
-    }
-
-    private void OnInit(EntityUid uid, MusicPlayerPortableComponent component, ComponentInit args)
-    {
-        // UpdatePlayerState(uid);
-    }
-
 }

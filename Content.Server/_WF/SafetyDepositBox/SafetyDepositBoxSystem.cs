@@ -27,7 +27,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map; // Exodus: stage persistent entities safely in nullspace.
-using Robust.Shared.Network;
+using Robust.Shared.Network; // Exodus: retain the authenticated account ID across awaits.
 using Robust.Shared.Toolshed.TypeParsers; // Exodus: retain the authenticated account ID across awaits.
 
 namespace Content.Server._WF.SafetyDepositBox;
@@ -771,7 +771,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         if (args.Container.ID == StorageComponent.ContainerId && IsBoxMutationBlocked(ent.Comp))
             args.Cancel();
 
-        if (!CanInsertChildren(args.EntityUid, ent.Owner))    // Exodus-add additional checks
+        if (!CanInsertChildren(args.EntityUid, ent.Owner)) // Exodus-add additional checks
             args.Cancel();
 
     }
@@ -789,7 +789,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
                !_allowedBoxMutations.Contains(boxId);
     }
 
-    private bool CanInsertChildren(EntityUid item, EntityUid storage)    // Exodus-add additional checks
+    private bool CanInsertChildren(EntityUid item, EntityUid storage) // Exodus-add additional checks
     {
             var childEnumerator = Transform(item).ChildEnumerator;
             while (childEnumerator.MoveNext(out var childUid))
@@ -804,7 +804,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
 
     private void OnItemSlotInsert(
         Entity<ItemSlotsComponent> ent,
-        ref ItemSlotInsertAttemptEvent args)    // Exodus-add additional checks
+        ref ItemSlotInsertAttemptEvent args) // Exodus-add additional checks
     {
         if (!_container.TryGetContainingContainer(args.SlotEntity, out var baseContainer)
             || !HasComp<SafetyDepositBoxComponent>(baseContainer.Owner)

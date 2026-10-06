@@ -16,7 +16,7 @@
     - state: MP3player-on-overlay
       visible: false
       shader: unshaded
-      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+      map: ["mppOverlayKey"]
     - state: clear
       shader: unshaded
       visible: false
@@ -31,10 +31,10 @@
     selectState: MP3player-on-SEARCH
   - type: GenericVisualizer
     visuals:
-      enum.PowerCellSlotVisuals.Enabled:
-        enum.PowerDeviceVisualLayers.Powered:
-          True: { visible: true }
-          False: { visible: false }
+      enum.MppItemVisuals.State:
+        mppOverlayKey:
+          Off: { visible: false }
+          On: { visible: true }
   - type: PowerCellDraw
     drawRate: 0
     useRate: 0.05
@@ -66,7 +66,7 @@
     - state: MP3player-on-overlay
       visible: false
       shader: unshaded
-      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+      map: ["mppOverlayKey"]
     - state: clear
       shader: unshaded
       visible: false

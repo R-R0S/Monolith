@@ -8,18 +8,15 @@ using Content.Server.Hands.Systems;
 using Content.Server.Popups;
 using Content.Server.Preferences.Managers;
 using Content.Server._NF.Bank;
-using Content.Server.Construction;
-using Content.Server.Construction.Components;
 using Content.Shared._NF.Bank.Components;
 using Content.Shared._WF.SafetyDepositBox.BUI;
 using Content.Shared._WF.SafetyDepositBox.Components;
 using Content.Shared._WF.SafetyDepositBox.Events;
-using Content.Shared.Construction.Components;
+using Content.Shared.Construction;
 using Content.Shared.Database;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Containers.ItemSlots;
-using Content.Shared.Interaction;
 using Content.Shared.Item;
 using Content.Shared.Labels.Components;
 using Content.Shared.Labels.EntitySystems;
@@ -86,8 +83,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         // Exodus-end
         // Exodus-begin: additional checks
         SubscribeLocalEvent<ItemSlotsComponent, ItemSlotInsertAttemptEvent>(OnItemSlotInsert);
-        SubscribeLocalEvent<ItemComponent, ConstructionToolUseStartedEvent>(OnConstructionToolUseStarted);
-        SubscribeLocalEvent<ItemComponent, GetConstructionToolUseDurationEvent>(OnGetConstructionToolUseDuration);
+        SubscribeLocalEvent<ItemComponent, ConstructionInteractDoAfterEvent>(OnConstructionInteractDoAfter);
         // Exodus-end
     }
 
@@ -825,27 +821,13 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
             _popup.PopupEntity(Loc.GetString(reason), args.User.Value);
     }
 
-    private void OnGetConstructionToolUseDuration(
-        EntityUid item,
-        ItemComponent component,
-        GetConstructionToolUseDurationEvent args)
+    private void OnConstructionInteractDoAfter(Entity<ItemComponent> ent, ref ConstructionInteractDoAfterEvent args)
     {
-        if (!_container.TryGetContainingContainer(item, out var baseContainer)
+        if (!_container.TryGetContainingContainer(ent.Owner, out var baseContainer)
             || !HasComp<SafetyDepositBoxComponent>(baseContainer.Owner))
             return;
 
-        _transform.DropNextTo(item, baseContainer.Owner);
-    }
-
-    private void OnConstructionToolUseStarted(EntityUid item,
-        ItemComponent component,
-        ConstructionToolUseStartedEvent args)
-    {
-        if (!_container.TryGetContainingContainer(item, out var baseContainer)
-            || !HasComp<SafetyDepositBoxComponent>(baseContainer.Owner))
-            return;
-
-        _transform.DropNextTo(item, baseContainer.Owner);
+        _transform.DropNextTo(ent.Owner, baseContainer.Owner);
     }
     // Exodus-end
 

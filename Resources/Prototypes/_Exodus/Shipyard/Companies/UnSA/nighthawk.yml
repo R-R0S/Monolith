@@ -1,12 +1,12 @@
 # Author Info
-# Discord: degonx5
+# Discord: DegonX5
 
 - type: vessel
-  id: unsaNighthawk
+  id: unsaNightHawk
   parent: BaseVessel
   name: company-vessel-unsa-nighthawk-name
   description: company-vessel-unsa-nighthawk-description
-  price: 410000
+  price: 435000
   category: Medium
   group: Shipyard
   requiredCompanies:
@@ -24,12 +24,12 @@
   - Plasma
 
 - type: gameMap
-  id: unsaNighthawk
+  id: unsaNightHawk
   mapName: 'ВША Ночной ястреб'
   mapPath: /SharedMaps/_Exodus/Shuttles/Companies/UnSA/nighthawk.yml
   minPlayers: 0
   stations:
-    unsaNighthawk:
+    unsaNightHawk:
       stationProto: StandardFrontierVessel
       components:
       - type: StationNameSetup

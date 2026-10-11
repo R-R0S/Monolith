@@ -69,7 +69,7 @@
       inlet:
         !type:PipeNode
         nodeGroupID: Pipe
-        pipeDirection: South
+        pipeDirection: North
         volume: 100
   - type: DeviceNetwork
     deviceNetId: Wireless

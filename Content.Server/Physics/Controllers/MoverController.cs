@@ -2,6 +2,7 @@ using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using Content.Server._Exodus.Nebula.Hazards; // Exodus
+using Content.Server._Exodus.Shuttles.Events; // Exodus N2O turbo booster thrust boost hook
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Shared._Exodus.Nebula.Components; // Exodus
@@ -611,6 +612,14 @@ public sealed partial class MoverController : SharedMoverController
             accelMul /= count;
             if (setMaxVel != null)
                 setMaxVel /= count;
+
+            // Exodus-begin: N2O turbo booster thrust boost hook
+            var thrustBoost = new GetShuttleThrustBoostEvent(uid);
+            RaiseLocalEvent(uid, ref thrustBoost);
+            angularMul *= thrustBoost.AngularMultiplier;
+            accelMul *= thrustBoost.LinearMultiplier;
+            // Exodus-end
+
             shuttle.AngularMultiplier = angularMul;
             shuttle.AccelerationMultiplier = accelMul;
 

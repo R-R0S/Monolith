@@ -1,0 +1,107 @@
+# N2O turbo booster: a large shuttle installation that burns piped-in nitrous oxide to
+# supercharge every engine on its grid. Controlled by a context menu verb or a device link signal.
+
+- type: entity
+  parent: BaseStructure
+  id: N2OTurboBooster
+  name: N2O turbo booster
+  description: >-
+    A massive nitrous oxide booster installation. Piped full of N2O it supercharges every engine
+    on the ship while it burns. Link it to a button to fire it remotely.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+    noRot: false
+  - type: Physics
+    bodyType: Static
+  - type: Rotatable
+    rotateWhileAnchored: true
+    increment: 90
+  - type: Anchorable
+    delay: 10
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-1.45,1.45,0.45"
+        density: 1200
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Sprite
+    sprite: _Exodus/Structures/Shuttles/n2o_turbo_booster.rsi
+    offset: 0.5,-0.5
+    layers:
+    - state: base
+    - state: thrust_burn_unshaded
+      map: ["enum.N2OTurboBoosterVisualLayers.Thrust"]
+      shader: unshaded
+      visible: false
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.N2OTurboBoosterVisuals.Active:
+        enum.N2OTurboBoosterVisualLayers.Thrust:
+          True: { visible: true }
+          False: { visible: false }
+  - type: PointLight
+    enabled: false
+    radius: 2
+    energy: 1.5
+    color: "#FF8830"
+    offset: "0, 0.1"
+  - type: N2OTurboBooster
+    storage:
+      volume: 500
+      temperature: 293.15
+    capacity: 1000
+    fuelConsumption: 8
+    boostMultiplier: 1.5
+  - type: AtmosDevice
+    requireAnchored: true
+    joinSystem: true
+  - type: NodeContainer
+    nodes:
+      inlet:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+        volume: 100
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+    - On
+    - Off
+    - Toggle
+  - type: DeviceLinkSource
+    ports:
+    - Status
+    lastSignals:
+      Status: false
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Electronic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 900
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: ShipRepairable
+    repairTime: 15
+    repairCost: 100
+  - type: StaticPrice
+    price: 4000

@@ -28,6 +28,16 @@
   category: cargoproduct-category-name-shuttle
   group: market
 
+- type: cargoProduct
+  id: ShuttleN2OTurboBooster
+  icon:
+    sprite: _Exodus/Structures/Shuttles/n2o_turbo_booster.rsi
+    state: base
+  product: CrateEngineeringN2OTurboBooster
+  cost: 10000
+  category: cargoproduct-category-name-shuttle
+  group: market
+
 # Ship weapons are priced closer to their deployed value, including initial contents.
 # Retain a purchase premium, with more headroom for high-value guns at premium trade outlets.
 - type: cargoProduct

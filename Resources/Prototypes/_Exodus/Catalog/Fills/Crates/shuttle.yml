@@ -27,3 +27,13 @@
   - type: StorageFill
     contents:
     - id: NebulaThrusterCornerFlatpack
+
+- type: entity
+  parent: CrateEngineering
+  id: CrateEngineeringN2OTurboBooster
+  name: N2O turbo booster crate
+  description: Contains an N2O turbo booster flatpack.
+  components:
+  - type: StorageFill
+    contents:
+    - id: N2OTurboBoosterFlatpack
